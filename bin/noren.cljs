@@ -27,6 +27,9 @@
             [noren.prescribe :as prescribe]
             [noren.build :as build]
             [loop-noren.registry :as registry]
+            [loop-noren.discover :as discover]
+            [loop-noren.murakumo :as murakumo]
+            [loop-noren.sources :as sources]
             [loop-noren.loop :as l]))
 
 (def root (path/resolve (path/dirname *file*) ".."))
@@ -169,13 +172,88 @@
     (when (seq missing)
       (println "所有者から貰うまで埋めない事実:" (str/join ", " (map name missing))))))
 
+;; ── discover ─────────────────────────────────────────────────────────────
+
+(defn- area [id]
+  (let [{:keys [areas]} (read-edn (at "data" "areas.edn"))
+        enabled (filter :enabled? areas)]
+    (if id
+      (first (filter #(= (keyword id) (:id %)) areas))
+      (first enabled))))
+
+(defn ^:private append-prospects!
+  "受理された prospect を名簿に追記する。**既存を書き換えない**（追記のみ）。"
+  [ps]
+  (let [f (at "data" "prospects.edn")
+        cur (vec (or (read-edn f) []))
+        merged (into cur ps)]
+    (.writeFileSync fs f (with-out-str (pp/pprint merged)))
+    (count merged)))
+
+(defn cmd-discover [args]
+  (let [accept? (boolean (some #{"--accept"} args))
+        id (first (remove #(str/starts-with? % "--") args))
+        a (area id)]
+    (if-not a
+      (println "有効な区画が data/areas.edn に無い（:enabled? true が 1 つも無いか、id が違う）")
+      (let [target (murakumo/resolve-target)
+            ;; 既に名簿に在る host は読まない（LLM も呼ばない、相手も叩かない）
+            known (set (map (fn [p] (-> p :prospect/site-url
+                                        (str/replace #"^https?://" "")
+                                        (str/replace #"^www\." "")
+                                        (str/split #"[/?#]") first))
+                            (or (read-edn (at "data" "prospects.edn")) [])))]
+        (println (str "discover " (:id a) " — " (:label a)))
+        (println (str "  model: " (:model target) " via " (name (:via target))
+                      " → " (:endpoint target)
+                      (when (:alias-for target) (str "（今の実体: " (:alias-for target) "）"))))
+        (p/let [{:keys [candidates without-website chain-outlets unclassified raw-count]}
+                (sources/fetch-candidates (:bbox a))]
+          (println (str "  OSM: " raw-count " element → candidate " (count candidates)
+                        "（website 無し " without-website
+                        " / チェーン店舗 " chain-outlets
+                        " / 分類不能 " unclassified "）"))
+          (let [{:keys [accepted results examined remaining]}
+                (discover/run {:candidates candidates
+                               :now today
+                               :model (str (:model target)
+                                           (when (:alias-for target) (str "=" (:alias-for target))))
+                               :known known
+                               :io {:page-text (sources/page-text-fn)
+                                    :complete (murakumo/complete-fn target)
+                                    :record! (fn [r] (journal-append! (assoc r :kind :discover)))}})]
+            (doseq [r results]
+              (println (str "  " (:candidate r) " → " (name (:decision r))
+                            (when-let [s (get-in r [:text-source :kind])] (str " / 本文:" (name s)))
+                            (when (seq (:dropped r)) (str " / 照合で落ちた: " (str/join "," (map name (:dropped r)))))
+                            (when (seq (:violations r)) (str " / " (str/join "," (map (comp name :rule) (:violations r))))))))
+            (when-let [e @murakumo/last-error] (println (str "  ! LLM: " e)))
+            (println (str "examined " examined " / accepted " (count accepted) " / remaining " remaining))
+            (if (and accept? (seq accepted))
+              (println (str "data/prospects.edn に追記した（計 " (append-prospects! accepted) " 件）"))
+              (doseq [p accepted]
+                (println (str "\n--- 受理（--accept で名簿に追記）---\n"
+                              (with-out-str (pp/pprint p))))))))))))
+
 (defn -main [args]
   (case (first args)
     "tick" (cmd-tick (rest args))
+    "discover" (cmd-discover (rest args))
+    "llm-probe" (let [t (murakumo/resolve-target)
+                      f (murakumo/complete-fn t)]
+                  (println "target:" (pr-str t))
+                  (println "reply:" (pr-str (f "pong とだけ返してください。" nil)))
+                  (when-let [e @murakumo/last-error] (println "error:" e)))
     "diagnose" (cmd-diagnose (rest args))
     "preview" (cmd-preview (rest args))
     "build" (cmd-build (rest args))
-    (println "usage: noren.cljs tick [--submit] | diagnose <url> [--catalog] | preview <id> | build <brief.edn> [--out f]")))
+    (println (str "usage:\n"
+                  "  noren.cljs discover [<area-id>] [--accept]   OSM + Common Crawl + murakumo で見込み事業者を発見\n"
+                  "  noren.cljs tick [--submit]                   1 周（既定は dry-run）\n"
+                  "  noren.cljs diagnose <url> [--catalog]\n"
+                  "  noren.cljs preview <prospect-id>\n"
+                  "  noren.cljs build <brief.edn> [--out f]\n"
+                  "  noren.cljs llm-probe                         murakumo-main の解決と疎通だけ見る"))))
 
 ;; nbb は script への引数を `*command-line-args*` に入れる（process.argv を
 ;; 直接切ると nbb 自身の引数を数え間違える）。

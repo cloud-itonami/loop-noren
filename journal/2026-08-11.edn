@@ -1,1 +1,35 @@
 {:prospect "maru.example.test", :outcome :skip, :stage :evaluate, :http-status "error: fetch failed", :reasons [:fetch-failed], :at "2026-08-11T07:07:17.721Z"}
+{:candidate "node/919282425", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/1608361988", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/1608387934", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/1608465463", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/1608617824", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/1608629439", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/1608639577", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/1608646042", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/2835380805", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/3856105334", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/4341890791", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/4385153796", :decision :reject, :violations [{:rule :no-page-text, :detail "本文が取れなかった（Common Crawl にも無く、live でも取れない）"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/4496288292", :decision :reject, :violations [{:rule :no-page-text, :detail "本文が取れなかった（Common Crawl にも無く、live でも取れない）"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/4791664322", :decision :reject, :violations [{:rule :no-page-text, :detail "本文が取れなかった（Common Crawl にも無く、live でも取れない）"}], :kind :discover, :at "2026-08-11T08:02:36.530Z"}
+{:candidate "node/919282425", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/1608361988", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/1608387934", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/1608465463", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/1608617824", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/1608629439", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/1608639577", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/1608646042", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/2835380805", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/3856105334", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/4341890791", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/4385153796", :decision :reject, :violations [{:rule :no-page-text, :detail "本文が取れなかった（Common Crawl にも無く、live でも取れない）"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/4496288292", :decision :reject, :violations [{:rule :no-page-text, :detail "本文が取れなかった（Common Crawl にも無く、live でも取れない）"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/4791664322", :decision :reject, :violations [{:rule :no-page-text, :detail "本文が取れなかった（Common Crawl にも無く、live でも取れない）"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/4964138926", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/4964974032", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/4972046244", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/6126581838", :decision :reject, :violations [{:rule :no-page-text, :detail "本文が取れなかった（Common Crawl にも無く、live でも取れない）"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/6126581841", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}
+{:candidate "node/6175796669", :decision :defer, :violations [{:rule :llm-unavailable, :detail "モデルが応答しなかった。候補は却下せず次の周へ回す"}], :kind :discover, :at "2026-08-11T08:08:31.009Z"}

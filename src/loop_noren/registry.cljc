@@ -14,9 +14,11 @@
 (def known-sources
   "prospect の出所として認めている経路。ここに無い値は弾く。
 
-  `:manual` 以外はまだ配線されていない —— **在ることにしない**ために、
+  `:osm-llm` は OSM のタグ（業種）+ Common Crawl / live の本文 + murakumo-main の
+  抽出を、`noren.discovery` の照合と DiscoveryGovernor に通して作られた登録。
+  `:passive-dns` はまだ配線されていない —— **在ることにしない**ために、
   `data/sources.edn` 側で `:enabled? false` と書いてある。"
-  #{:manual :common-crawl :passive-dns :owner-inbound})
+  #{:manual :owner-inbound :osm-llm :common-crawl :passive-dns})
 
 (defn validate
   "`[prospect …]` → `{:ok [..] :rejected [{:prospect :problems}]}`。

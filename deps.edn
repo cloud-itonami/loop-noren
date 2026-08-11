@@ -4,7 +4,14 @@
         io.github.kotoba-lang/design-quality {:local/root "../../kotoba-lang/design-quality"}
         io.github.kotoba-lang/jp-go-digital-design-system {:local/root "../../kotoba-lang/jp-go-digital-design-system"}
         io.github.kotoba-lang/html {:local/root "../../kotoba-lang/html"}
-        io.github.kotoba-lang/css {:local/root "../../kotoba-lang/css"}}
+        io.github.kotoba-lang/css {:local/root "../../kotoba-lang/css"}
+        ;; 発見（discover）が乗っている 2 つ。どちらも既存で、繋いだだけ。
+        ;; commoncrawl 側の実 I/O は `commoncrawl.live-http`（.cljs、nbb 専用）
+        ;; なので JVM からは読まれない。
+        io.github.kotoba-lang/org-openstreetmap-overpass
+        {:local/root "../../kotoba-lang/org-openstreetmap-overpass"}
+        io.github.kotoba-lang/kotobase-commoncrawl-actor
+        {:local/root "../../kotoba-lang/kotobase-commoncrawl-actor"}}
  :aliases
  {:test {:extra-paths ["test"]
          :extra-deps {io.github.cognitect-labs/test-runner

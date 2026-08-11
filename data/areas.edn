@@ -1,0 +1,24 @@
+;; discover が歩く区画。**宣言する。導出しない。**
+;;
+;; bbox を細かく切ってあるのは、Overpass への 1 クエリを小さく保つため
+;; （共有インフラで、こちらの都合で広域を舐めてよい相手ではない）。
+;; 「東京都」のような広い矩形を 1 本投げない。
+;;
+;; `:enabled? false` の区画は `discover` の対象外。増やすときは 1 区画ずつ、
+;; 前の区画で実際に何件受理されたか（journal）を見てから足す。
+
+{:areas
+ [{:id :jp-tokyo-kagurazaka
+   :enabled? true
+   :label "東京・神楽坂（飲食店の密度が高く、個人店の比率も高い）"
+   :bbox {:south 35.6980 :west 139.7370 :north 35.7060 :east 139.7460}}
+
+  {:id :jp-tokyo-nishiogi
+   :enabled? false
+   :label "東京・西荻窪"
+   :bbox {:south 35.7000 :west 139.5960 :north 35.7080 :east 139.6060}}
+
+  {:id :jp-kyoto-nishiki
+   :enabled? false
+   :label "京都・錦市場周辺"
+   :bbox {:south 35.0020 :west 135.7600 :north 35.0080 :east 135.7700}}]}
