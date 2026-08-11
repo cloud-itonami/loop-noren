@@ -1,0 +1,13 @@
+{:paths ["src"]
+ ;; domain truth は noren 側。この repo は順序と I/O だけを持つ。
+ :deps {io.github.kotoba-lang/noren {:local/root "../../kotoba-lang/noren"}
+        io.github.kotoba-lang/design-quality {:local/root "../../kotoba-lang/design-quality"}
+        io.github.kotoba-lang/jp-go-digital-design-system {:local/root "../../kotoba-lang/jp-go-digital-design-system"}
+        io.github.kotoba-lang/html {:local/root "../../kotoba-lang/html"}
+        io.github.kotoba-lang/css {:local/root "../../kotoba-lang/css"}}
+ :aliases
+ {:test {:extra-paths ["test"]
+         :extra-deps {io.github.cognitect-labs/test-runner
+                      {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
+         :main-opts ["-m" "cognitect.test-runner"]
+         :exec-fn cognitect.test-runner.api/test}}}

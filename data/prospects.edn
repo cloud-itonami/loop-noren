@@ -1,0 +1,27 @@
+;; 見込み事業者。**1 件ずつ人が宣言する。**
+;;
+;; ここに実在の事業者を入れる前に、その 1 件について次を実際に見ていること:
+;;
+;;   :contact/source-url  そのメールアドレスが公表されていた**そのページ**の URL
+;;   :contact/observed-at いつ見たか（後から検証できる形で）
+;;   :prospect/kind       :organization か :sole-trader（個人は対象外）
+;;   :prospect/isic       業種。**ホスト名や店名から推測しない**
+;;
+;; 特定電子メール法 3 条 1 項 4 号の例外に当たる根拠はこの 4 つで、
+;; 揃っていない登録は `noren.governor` が HARD で止める（止まるのが正しい）。
+;;
+;; 下は **example.test の作り物**。動作確認のために置いてあり、実在しない。
+;; 実在の事業者を入れるときはこの行を消してから入れる —— 作り物と実在が
+;; 同じファイルに並ぶと、dry-run のつもりで実在へ出す事故になる。
+
+[{:prospect/id "example-maru"
+  :prospect/name "そば処 まる（架空）"
+  :prospect/isic "5610"
+  :prospect/kind :organization
+  :prospect/source :manual
+  :prospect/site-url "https://maru.example.test/"
+  :prospect/observed-at "2026-08-11"
+  :prospect/opt-out-declared? false
+  :prospect/contact {:contact/email "info@maru.example.test"
+                     :contact/source-url "https://maru.example.test/contact"
+                     :contact/observed-at "2026-08-11"}}]

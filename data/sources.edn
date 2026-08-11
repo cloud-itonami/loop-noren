@@ -1,0 +1,36 @@
+;; loop-noren の prospect 出所。**宣言する。導出しない。**
+;;
+;; `:enabled? false` は「まだ配線していない」であって「無い」ではない。
+;; 在ることにしないためにここへ書いておく —— 書かないと、次に読む者が
+;; 「Common Crawl から取れているはずだ」と思い込む余地が残る。
+;;
+;; どの経路から来た prospect も `loop-noren.registry/validate` と
+;; `noren.prospect/eligible` の同じ 2 枚を通る。経路ごとに緩めない。
+
+{:sources
+ [{:id :manual
+   :enabled? true
+   :label "手で登録した事業者"
+   :note "data/prospects.edn。公表されている連絡先を人が見て入れる。
+          最初の実運用はここだけで回す —— 発見を自動化する前に、
+          governor と提案文が実際に通ることを少数で確かめる。"}
+
+  {:id :owner-inbound
+   :enabled? true
+   :label "所有者からの問い合わせ"
+   :note "先方から来たもの。3 条 1 項 1〜3 号に当たるので接触の前提は満たすが、
+          診断と処方は同じ経路を通す（測っていないことは言えない、は不変）。"}
+
+  {:id :common-crawl
+   :enabled? false
+   :label "Common Crawl の WARC から"
+   :depends-on ["kotoba-lang/common-crawl" "kotoba-lang/kotobase-commoncrawl-actor"]
+   :note "既存の ingestion actor が在る。未配線なのは発見そのものではなく
+          『ISIC の割り当てを誰が宣言するか』が未決だから —— ホスト名から
+          業種を推測した瞬間に、この loop は推測を根拠に売り始める。"}
+
+  {:id :passive-dns
+   :enabled? false
+   :label "passive DNS の観測ドメイン"
+   :depends-on ["cloud-itonami/yabai"]
+   :note "ドメインは取れるが、事業者との対応づけが無い。同上。"}]}
