@@ -1,0 +1,10 @@
+# どの面に属するかを path で決める。**サイズや中身から推測しない。**
+#
+# `annex.largefiles` を「これは git-annex に置く」と読む。`nothing` は
+# 「普通の git blob」。datalad の text2git 設定は内容から決めるが、それは
+# ここでは逆に働く —— 名簿も journal も receipt も**小さい semantic EDN で
+# diff で読めなければ意味が無い**一方、raw の本文もテキストなので、
+# 内容から決めると両方 git に入って annex を使う理由が消える。
+* annex.largefiles=nothing
+raw/** annex.largefiles=anything
+* annex.backend=SHA256E
