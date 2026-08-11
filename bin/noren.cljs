@@ -127,18 +127,29 @@
                          :headers #js {"content-type" "application/json"
                                        "authorization" (str "Bearer " key)}
                          :body (js/JSON.stringify
+                                ;; server 側の contract（cloud-itonami.noren/validate）:
+                                ;; id / title / body / site / claimAxes[] が必須で、
+                                ;; **claimAxes が空なら 400**。receipt が持っている
+                                ;; 測定軸をそのまま渡す —— ここで別に組み立てると、
+                                ;; 送った主張と残した証跡がずれる。
                                 (clj->js {:id (str "noren:" (:prospect result) ":" today)
                                           :title (get-in result [:message :subject])
                                           :body (get-in result [:message :body])
                                           :site (:prospect result)
-                                          :evidence (:receipt result)}))})
+                                          :claimAxes (vec (:receipt/claim-axes (:receipt result)))
+                                          :overall (:receipt/overall (:receipt result))
+                                          :action (some-> (:receipt/action (:receipt result)) name)}))})
           (p/then (fn [r]
                     (let [st (.-status r)]
                       (cond
                         (= 202 st) {:queued true :status st}
                         (= 200 st) {:queued true :status st :note :already-open}
-                        (#{404 502} st) (do (println "  ! ingress 未提供（server 側が未実装）")
-                                            {:queued false :status st :reason :ingress-absent})
+                        ;; 503 = テナントに ingress 鍵が未設定（provisioned でない）。
+                        ;; 404/502 = 経路そのものがまだデプロイされていない。
+                        ;; **どれも「提案した」ではない。**
+                        (#{404 502 503} st)
+                        (do (println (str "  ! ingress が使えない（HTTP " st "）—— 鍵未設定か未デプロイ"))
+                            {:queued false :status st :reason :ingress-unavailable})
                         :else {:queued false :status st}))))
           (p/catch (fn [e] {:queued false :reason (.-message e)}))))))
 
