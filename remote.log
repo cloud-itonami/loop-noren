@@ -1,0 +1,1 @@
+034a7dff-fd6e-4d50-b379-baee6bb293a5 bucket=cloud-itonami-loop-noren chunk=50MiB datacenter=US encryption=none host=s3.kotobase.net name=kotobase port=443 protocol=https requeststyle=path signature=v4 storageclass=STANDARD type=S3 timestamp=1786437488s
