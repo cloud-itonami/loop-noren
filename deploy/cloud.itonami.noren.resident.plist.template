@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- deploy/install.cljs が @REPO@ / @NBB@ / @HOME@ を置換して入れる。
+     このファイルを直接 install しない（loop-yakuwari / cloud-murakumo の
+     organism と同じ install-time template の慣習）。 -->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>cloud.itonami.noren.resident</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>@NBB@</string>
+    <string>@REPO@/bin/resident.cljs</string>
+    <string>--apply</string>
+  </array>
+  <!-- LaunchAgent の cwd は "/" なので、repo を明示する。 -->
+  <key>WorkingDirectory</key><string>@REPO@</string>
+  <!-- 1 日 1 回。discover は 5 件まで、tick は 1 件までなので、これ以上
+       速く回しても外に出るものは増えず、Overpass と相手のサーバに負荷が増えるだけ。 -->
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>9</integer><key>Minute</key><integer>20</integer></dict>
+  <key>RunAtLoad</key><false/>
+  <key>StandardOutPath</key><string>@HOME@/.gftd/noren-resident.log</string>
+  <key>StandardErrorPath</key><string>@HOME@/.gftd/noren-resident.log</string>
+</dict>
+</plist>

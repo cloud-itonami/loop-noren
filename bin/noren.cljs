@@ -27,6 +27,8 @@
             [noren.prescribe :as prescribe]
             [noren.build :as build]
             [loop-noren.registry :as registry]
+            [loop-noren.store :as store]
+            [loop-noren.store-io :as store-io]
             [loop-noren.discover :as discover]
             [loop-noren.murakumo :as murakumo]
             [loop-noren.sources :as sources]
@@ -67,16 +69,25 @@
     (zipmap urls rs)))
 
 (defn journal-append!
-  "append-only の日次シャード（`kouhou` の corpus receipt と同型）。
-  1 行 1 EDN。**書き換えない。**"
+  "決定事実を journal 面へ 1 行。**raw は sha256 で参照する**（生返答も HTML も
+  ここには入らない —— 実体は raw 面に居り、receipt が join する）。"
   [entry]
-  (let [dir (at "journal")]
-    (fs/mkdirSync dir #js {:recursive true})
-    (.appendFileSync fs (path/join dir (str today ".edn"))
-                     (str (pr-str (-> entry
-                                      (dissoc :message :prescription)
-                                      (assoc :at now-iso)))
-                          "\n"))))
+  (store-io/append-lines! root (store/journal-shard now-iso)
+                          [(store/journal-entry entry now-iso)]))
+
+(defn receipt-append! [r]
+  (store-io/append-lines! root (store/corpus-shard now-iso) [r]))
+
+(defn archive!
+  "本文/生返答を raw 面へ置き、receipt を 1 件書く。→ receipt に載った
+  `{:path :sha256 :bytes}`（何も書かなければ nil）。"
+  [{:keys [subject kind url content ext text-source status error]}]
+  (let [raw (store-io/write-raw! root {:content content :kind kind :ext ext :at now-iso})]
+    (receipt-append! (store/receipt (merge {:at now-iso :subject subject :kind kind
+                                            :url url :text-source text-source
+                                            :status status :error error}
+                                           raw)))
+    raw))
 
 (defn history-for
   "過去に**提案として出した**記録だけを履歴とする（hold は接触ではない）。"
@@ -92,28 +103,43 @@
          (mapv (fn [e] {:contacted-at (subs (str (:at e)) 0 10)})))))
 
 (defn propose!
-  "承認キューへ effect を積む。**送信ではない** —— 実行は cloud-itonami 側の
-  承認を通る（`:effect/requires-approval true`）。"
+  "承認キューへ 1 件提案する。**送信ではない。**
+
+  経路は cloud-itonami の narrow ingress `POST /api/{org}/{repo}/noren` で、
+  `kaizen` ingress（回遊 → 改善、`kaiyu` が使っている実在の経路）と同じ形にする:
+  提案しかできない per-tenant の鍵、`202 proposed` / `200 already-open`、
+  承認は cockpit の人がやる。**この loop は approve の鍵を持たない。**
+
+  ⚠ **server 側はまだ無い**（2026-08-11 実測: `POST /api/{org}/{repo}/effects` は
+  502、effect を外から作る公開経路は cloud-itonami に存在せず、
+  `effectsOnRequestPost` は approve/reject 専用）。したがってここは
+  **contract を先に書いた状態**で、404/502 が返ったら『未提供』と明示して
+  journal に残す —— 提案できなかったことを、提案したことにしない。"
   [result]
   (let [org (or js/process.env.NOREN_TENANT_ORG "cloud-itonami")
         repo (or js/process.env.NOREN_TENANT_REPO "loop-noren")
-        token js/process.env.ITONAMI_OPERATOR_TOKEN]
-    (if-not token
-      (do (println "  ! ITONAMI_OPERATOR_TOKEN が無いので effect を積めない（提案は journal にだけ残る）")
-          {:queued false :reason :no-token})
-      (-> (js/fetch (str "https://itonami.cloud/api/" org "/" repo "/effects")
+        key js/process.env.NOREN_INGRESS_KEY]
+    (if-not key
+      (do (println "  ! NOREN_INGRESS_KEY が無い（提案は journal と receipt にだけ残る）")
+          {:queued false :reason :no-ingress-key})
+      (-> (js/fetch (str "https://itonami.cloud/api/" org "/" repo "/noren")
                     #js {:method "POST"
                          :headers #js {"content-type" "application/json"
-                                       "authorization" (str "Bearer " token)}
+                                       "authorization" (str "Bearer " key)}
                          :body (js/JSON.stringify
-                                (clj->js {:effect/type "noren.outreach/proposal"
-                                          :effect/risk "outbound-contact"
-                                          :effect/requires-approval true
-                                          :effect/payload {:prospect (:prospect result)
-                                                           :receipt (:receipt result)
-                                                           :subject (get-in result [:message :subject])
-                                                           :body (get-in result [:message :body])}}))})
-          (p/then (fn [r] {:queued (.-ok r) :status (.-status r)}))
+                                (clj->js {:id (str "noren:" (:prospect result) ":" today)
+                                          :title (get-in result [:message :subject])
+                                          :body (get-in result [:message :body])
+                                          :site (:prospect result)
+                                          :evidence (:receipt result)}))})
+          (p/then (fn [r]
+                    (let [st (.-status r)]
+                      (cond
+                        (= 202 st) {:queued true :status st}
+                        (= 200 st) {:queued true :status st :note :already-open}
+                        (#{404 502} st) (do (println "  ! ingress 未提供（server 側が未実装）")
+                                            {:queued false :status st :reason :ingress-absent})
+                        :else {:queued false :status st}))))
           (p/catch (fn [e] {:queued false :reason (.-message e)}))))))
 
 ;; ── commands ─────────────────────────────────────────────────────────────
@@ -125,12 +151,34 @@
 
 (defn- run-tick [ps {:keys [submit? record?]}]
   (p/let [pages (prefetch (map :prospect/site-url ps))]
-    (l/tick {:prospects ps :now today :year year :sender sender
-             :io (cond-> {:fetch (fn [url] (get pages url {:html nil :status "not-fetched"}))
-                          :history history-for
-                          :suppression #(set (or (read-edn (at "data" "suppression.edn")) #{}))}
-                   record? (assoc :record! journal-append!)
-                   submit? (assoc :propose! propose!))})))
+    ;; **測った HTML を残す。** claim は測定に拘束されているので、その測定の
+    ;; 入力が残っていなければ、後から「本当にそう書いてあったか」を引けない。
+    (let [raws (when record?
+                 (into {} (map (fn [[url {:keys [html status]}]]
+                                 [url (archive! {:subject (-> url
+                                                              (str/replace #"^https?://" "")
+                                                              (str/replace #"^www\." "")
+                                                              (str/split #"[/?#]") first)
+                                                 :kind :page :ext "html" :url url
+                                                 :content html :status status
+                                                 :text-source {:kind :live}})])
+                               pages)))]
+      (l/tick {:prospects ps :now today :year year :sender sender
+               :io (cond-> {:fetch (fn [url] (get pages url {:html nil :status "not-fetched"}))
+                            :history history-for
+                            :suppression #(set (or (read-edn (at "data" "suppression.edn")) #{}))}
+                     record? (assoc :record!
+                                    (fn [r]
+                                      (journal-append!
+                                       (let [url (some #(when (= (:prospect r)
+                                                                 (-> % (str/replace #"^https?://" "")
+                                                                     (str/replace #"^www\." "")
+                                                                     (str/split #"[/?#]") first))
+                                                          %)
+                                                       (keys pages))]
+                                         (cond-> r
+                                           (get raws url) (assoc :raw (get raws url)))))))
+                     submit? (assoc :propose! propose!))}))))
 
 (defn cmd-tick [args]
   (let [submit? (boolean (some #{"--submit"} args))]
@@ -219,9 +267,35 @@
                                :model (str (:model target)
                                            (when (:alias-for target) (str "=" (:alias-for target))))
                                :known known
-                               :io {:page-text (sources/page-text-fn)
-                                    :complete (murakumo/complete-fn target)
-                                    :record! (fn [r] (journal-append! (assoc r :kind :discover)))}})]
+                               :io (let [page-text (sources/page-text-fn)
+                                         complete (murakumo/complete-fn target)
+                                         seen (atom {})]
+                                     {:page-text
+                                      (fn [url]
+                                        (let [{:keys [text source] :as r} (page-text url)]
+                                          (swap! seen assoc :page
+                                                 (archive! {:subject url :kind :page-text :ext "txt"
+                                                            :url url :content text
+                                                            :text-source source
+                                                            :status (:status source)}))
+                                          r))
+                                      :complete
+                                      (fn [prompt system]
+                                        (let [reply (complete prompt system)]
+                                          (swap! seen assoc :reply
+                                                 (archive! {:subject (get-in @seen [:page :sha256])
+                                                            :kind :llm-reply :ext "txt"
+                                                            :content reply
+                                                            :text-source {:kind :murakumo}
+                                                            :error @murakumo/last-error}))
+                                          reply))
+                                      :record!
+                                      (fn [r]
+                                        (journal-append!
+                                         (cond-> (assoc r :kind :discover)
+                                           (:page @seen) (assoc :raw (:page @seen))
+                                           (:reply @seen) (assoc :raw-reply-ref (:reply @seen))))
+                                        (reset! seen {}))})})]
             (doseq [r results]
               (println (str "  " (:candidate r) " → " (name (:decision r))
                             (when-let [s (get-in r [:text-source :kind])] (str " / 本文:" (name s)))
@@ -239,6 +313,22 @@
   (case (first args)
     "tick" (cmd-tick (rest args))
     "discover" (cmd-discover (rest args))
+    "verify-corpus"
+    (let [receipts (store-io/all-receipts root)
+          res (store/verify receipts (store-io/stat-fn root))
+          v (store/verdict res)]
+      (println (str "receipts " (count receipts)
+                    " / ok " (:ok res)
+                    " / raw 無し " (:no-raw res)
+                    " / annex から drop 済み " (count (:absent res))
+                    " / 欠落 " (count (:missing res))
+                    " / 不一致 " (count (:mismatch res))))
+      (doseq [m (:mismatch res)] (println "  ! 不一致:" (:path m)))
+      (doseq [m (:missing res)] (println "  ! 欠落:" m))
+      (println (str "verdict: " (name v)
+                    "（identity のみ。custody は `git annex find --in kotobase raw/` が答える）"))
+      (js/process.exit (if (= :ok v) 0 1)))
+
     "llm-probe" (let [t (murakumo/resolve-target)
                       f (murakumo/complete-fn t)]
                   (println "target:" (pr-str t))
@@ -253,6 +343,7 @@
                   "  noren.cljs diagnose <url> [--catalog]\n"
                   "  noren.cljs preview <prospect-id>\n"
                   "  noren.cljs build <brief.edn> [--out f]\n"
+                  "  noren.cljs verify-corpus                     receipt と raw の実体を突き合わせる\n"
                   "  noren.cljs llm-probe                         murakumo-main の解決と疎通だけ見る"))))
 
 ;; nbb は script への引数を `*command-line-args*` に入れる（process.argv を

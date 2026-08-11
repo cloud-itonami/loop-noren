@@ -17,11 +17,70 @@ data/areas.edn        discover が歩く区画（宣言。導出しない）
 data/sources.edn      prospect の出所（宣言。導出しない）
 data/prospects.edn    見込み事業者（1 件ずつ人が宣言する）
 data/suppression.edn  受信拒否（恒久。消さない）
+data/corpus/<日>.edn  読み取り 1 回 = receipt 1 件。raw への {:path :sha256 :bytes}
+journal/<日>.edn      決定事実。1 行 1 EDN、追記のみ
+raw/<日>/<sha>-*.txt  読んだ本文・生返答・診断した HTML → git-annex → s3.kotobase.net
 src/loop_noren/       registry(検査) / loop(順序) / letter(組み立て)
-                      discover(発見の順序) / sources(OSM・CC の I/O) / murakumo(LLM)
+                      discover(発見) / sources(OSM・CC) / murakumo(LLM)
+                      store + store_io + canonical(永続化)
 bin/noren.cljs        外に出る唯一の場所。既定は dry-run
-journal/<UTC日>.edn   append-only の証跡。1 行 1 EDN
+bin/resident.cljs     常駐の 1 日ぶん（deploy/ の LaunchAgent が呼ぶ）
 ```
+
+## 永続化 —— canonical EDN は git、bytes は annex
+
+`kouhou`（ADR-2608110200）と同型の 4 面。**役割が違うものを同じ場所に置かない。**
+
+| 面 | 中身 | bytes |
+|---|---|---|
+| 名簿 `data/prospects.edn` | 見込み事業者の宣言 | git |
+| journal `journal/<日>.edn` | 決定事実（追記のみ） | git |
+| corpus receipt `data/corpus/<日>.edn` | 読み取り 1 回につき 1 件 | git |
+| raw `raw/<日>/<sha>-*.txt` | 本文・生返答・診断した HTML | **annex → s3.kotobase.net** |
+
+**receipt が 2 面の join。** 提案を見たら、それが**どの本文の**どの測定から出たかを
+名指しでき、digest で照合できる。receipt が無ければ対応づけはファイル名頼りで、
+それは内容について何も証明しない。
+
+**journal に生返答を書かない。** 決定ログにモデルの出力が混ざると際限なく膨らむ。
+journal が持つのは sha256 だけで、実体は raw 面に居る。
+
+**raw を git に置かない。** 1 周で本文 20 件 + 生返答 20 件、毎日回せば年で数 GB。
+actor を clone するのに corpus のダウンロードが要る状態にしない。
+
+```bash
+nbb --classpath "$CP" bin/noren.cljs verify-corpus   # identity（receipt どおりか）
+git annex find --in kotobase raw/ | wc -l            # custody（object plane が持っているか）
+git annex copy raw/ --to kotobase --jobs 1
+datalad drop raw/                                    # 実体を落とす。pointer は残る
+```
+
+**この 2 つは別の問い。** `verify-corpus` は drop された bytes を `:absent` と数え
+失敗にしない（drop できることが annex を使う理由）。custody は
+`--in kotobase` の**行数**が答える —— `git annex fsck --from kotobase` の `ok` は
+「照合するものが無かった」でも印字されるので custody の数として読まない
+（kouhou の実測: 48 件中 10 件の欠落を見落とす）。
+
+## 常駐（deploy/）
+
+```bash
+nbb deploy/install.cljs              # 何をするか
+nbb deploy/install.cljs --apply      # LaunchAgent を入れる（毎日 09:20）
+nbb deploy/install.cljs --remove --apply
+```
+
+1 日 1 回 `bin/resident.cljs` が discover --accept → tick → commit → annex copy →
+verify → push を**この順で**回す。順序が要るものを plist に割らないのは、
+時刻の偶然で「まだ commit していない raw を copy する」が起きるため。
+
+**Worker ではなく常駐なのは、Common Crawl の range fetch も curl も git-annex も
+isolate では動かないから。** cloud-itonami が edge に持つのは承認キューと cockpit で、
+判断の実行は常駐側にある（cloud-murakumo の organism と同じ形）。常駐は latency と
+費用を変えるだけで、**権限は変えない** —— 何を出してよいかは `noren.governor` が決める。
+
+`git add` は `data` / `journal` / `raw` に限る。共有 checkout なので、
+別セッションが `src/` を編集している最中に常駐が回ることがあり、`-A` にすると
+他人の WIP を commit してしまう。
 
 ## 発見（discover）
 
@@ -76,9 +135,16 @@ nbb --classpath "$CP" bin/noren.cljs build brief.edn --out site.html
 nbb --classpath "$CP" bin/noren.cljs tick --submit      # 承認キューへ積む
 ```
 
-`--submit` は `ITONAMI_OPERATOR_TOKEN` が要る。積まれるのは
-`:effect/requires-approval true` の effect で、**実際の送信は cloud-itonami の
-承認を通る。** 送信者表示（`NOREN_SENDER_NAME` / `NOREN_SENDER_ADDRESS` /
+`--submit` は `NOREN_INGRESS_KEY`（提案しかできない per-tenant の鍵）が要る。
+`kaizen` ingress（`kaiyu` が使っている実在の経路）と同じ形 —— `202 proposed` /
+`200 already-open`、承認は cockpit の人がやり、**この loop は approve の鍵を
+持たない**。
+
+⚠ **server 側はまだ無い。** 実測 2026-08-11: `POST /api/{org}/{repo}/effects` は
+502 で、effect を外から作る公開経路は cloud-itonami に存在しない
+（`effectsOnRequestPost` は approve/reject 専用）。client は最終 contract で
+書いてあり、404/502 は「未提供」として journal に残る —— 提案できなかったことを
+提案したことにしない。 送信者表示（`NOREN_SENDER_NAME` / `NOREN_SENDER_ADDRESS` /
 `NOREN_OPT_OUT`）は環境変数で上書きできるが、既定でも欠けていない ——
 欠けたまま送れる既定を置かない。
 
