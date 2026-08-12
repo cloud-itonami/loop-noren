@@ -14,8 +14,8 @@
   ;; nbb の classpath は `--classpath` で明示するのでここに在っても無くても同じ。
   :nbb {:extra-deps {io.github.kotoba-lang/org-openstreetmap-overpass
                      {:local/root "../../kotoba-lang/org-openstreetmap-overpass"}
-                     io.github.kotoba-lang/kotobase-commoncrawl-actor
-                     {:local/root "../../kotoba-lang/kotobase-commoncrawl-actor"}}}
+                     io.github.net-kotobase/commoncrawl-actor
+                     {:local/root "../../net-kotobase/commoncrawl-actor"}}}
   :test {:extra-paths ["test"]
          :extra-deps {io.github.cognitect-labs/test-runner
                       {:git/tag "v0.5.1" :git/sha "dfb30dd"}}
