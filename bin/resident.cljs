@@ -75,8 +75,10 @@
   (require-ok! "fast-forward to origin/main" (git "merge" "--ff-only" "origin/main")))
 
 (defn- publish-main! []
+  ;; HEAD is a commit object in west's detached checkout, so Git cannot infer
+  ;; that a not-yet-existing destination is a branch. Spell the full ref.
   (require-ok! "push resident branch"
-               (git "push" "origin" "HEAD:resident/noren"))
+               (git "push" "origin" "HEAD:refs/heads/resident/noren"))
   (let [merged (run "server-side merge resident/noren -> main"
                     ["gh" "api" "repos/cloud-itonami/loop-noren/merges"
                      "-f" "base=main" "-f" "head=resident/noren"
