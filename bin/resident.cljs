@@ -35,7 +35,7 @@
                       "../../kotoba-lang/html/src"
                       "../../kotoba-lang/css/src"
                       "../../kotoba-lang/org-openstreetmap-overpass/src"
-                      "../../kotoba-lang/kotobase-commoncrawl-actor/src"])))
+                      "../../net-kotobase/commoncrawl-actor/src"])))
 
 (defn- run
   "→ `{:ok? :out}`。**例外にしない** —— 1 段落ちても残りの段は意味があり、

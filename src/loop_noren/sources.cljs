@@ -6,7 +6,7 @@
   | 何 | どこ |
   |---|---|
   | OSM Overpass | `kotoba-lang/org-openstreetmap-overpass`（QL 組み立て・応答正規化・礼儀正しい間隔） |
-  | Common Crawl | `kotoba-lang/kotobase-commoncrawl-actor` の `commoncrawl.cdx` / `live-http`（CDX 照会 + WARC range fetch + envelope 剥がし） |
+  | Common Crawl | `net-kotobase/commoncrawl-actor` の `commoncrawl.cdx` / `live-http`（CDX 照会 + WARC range fetch + envelope 剥がし） |
   | LLM | `loop-noren.murakumo`（`murakumo-main` alias 解決） |
 
   ## 本文をまず Common Crawl から取る理由

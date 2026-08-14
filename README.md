@@ -127,7 +127,7 @@ record    ── journal に 1 行。skip も hold も理由つきで残る
 ```bash
 CP="src:test:../../kotoba-lang/noren/src:../../kotoba-lang/design-quality/src:\
 ../../kotoba-lang/jp-go-digital-design-system/src:../../kotoba-lang/html/src:../../kotoba-lang/css/src:\
-../../kotoba-lang/org-openstreetmap-overpass/src:../../kotoba-lang/kotobase-commoncrawl-actor/src"
+../../kotoba-lang/org-openstreetmap-overpass/src:../../net-kotobase/commoncrawl-actor/src"
 
 nbb --classpath "$CP" run_tests.cljs                    # 18 tests / 59 assertions
 nbb --classpath "$CP" bin/noren.cljs discover           # 発見（dry-run。--accept で名簿に追記）

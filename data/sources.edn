@@ -25,7 +25,7 @@
    :enabled? true
    :label "OSM のタグ（業種）+ 本文の LLM 抽出"
    :depends-on ["kotoba-lang/org-openstreetmap-overpass"
-                "kotoba-lang/kotobase-commoncrawl-actor"
+                "net-kotobase/commoncrawl-actor"
                 "murakumo-main（api.murakumo.cloud の KV alias）"]
    :note "**業種は OSM のタグから決まる**（noren.discovery/osm-tag->isic の表。
           誰かが現地を見て付けた宣言で、こちらの推測ではない）。LLM が返してよいのは
@@ -37,7 +37,7 @@
   {:id :common-crawl
    :enabled? true
    :label "Common Crawl の WARC（本文の取得経路として）"
-   :depends-on ["kotoba-lang/kotobase-commoncrawl-actor"]
+   :depends-on ["net-kotobase/commoncrawl-actor"]
    :note "**発見の入口ではない**（CC の index は URL キーで、業種で引けない）。
           使うのは本文の取得で、まだ用があると決まっていない相手のサーバを
           叩かずに読むため。CC に無いときだけ live を 1 回取る。

@@ -35,9 +35,14 @@
   "classpath は ../../kotoba-lang/{noren,design-quality,…} に届く。checkout が
   無ければ agent は毎日静かに落ち、log にしか理由が出ない。**今拒否する。**"
   []
-  (let [needed ["noren" "design-quality" "jp-go-digital-design-system" "html" "css"
-                "org-openstreetmap-overpass" "kotobase-commoncrawl-actor"]
-        missing (remove #(fs/existsSync (path/join repo ".." ".." "kotoba-lang" % "src")) needed)]
+  (let [needed ["../../kotoba-lang/noren/src"
+                "../../kotoba-lang/design-quality/src"
+                "../../kotoba-lang/jp-go-digital-design-system/src"
+                "../../kotoba-lang/html/src"
+                "../../kotoba-lang/css/src"
+                "../../kotoba-lang/org-openstreetmap-overpass/src"
+                "../../net-kotobase/commoncrawl-actor/src"]
+        missing (remove #(fs/existsSync (path/join repo %)) needed)]
     (when (seq missing)
       (throw (ex-info (str "west checkout が足りない: " (str/join ", " missing)
                            " — `west update --fetch smart` してから入れる")
