@@ -63,6 +63,29 @@
 
 (defn- git [& args] (run (str "git " (str/join " " args)) (concat ["git"] args)))
 
+(defn- require-ok! [label result]
+  (when-not (:ok? result)
+    (throw (ex-info (str label " failed; resident pass is incomplete") {}))))
+
+(defn- sync-main! []
+  ;; west leaves project checkouts detached. Resolve the remote ref explicitly;
+  ;; `git push origin main` would otherwise push a stale local branch named
+  ;; main rather than the checked-out HEAD.
+  (require-ok! "fetch origin/main" (git "fetch" "origin" "main"))
+  (require-ok! "fast-forward to origin/main" (git "merge" "--ff-only" "origin/main")))
+
+(defn- publish-main! []
+  (require-ok! "push resident branch"
+               (git "push" "origin" "HEAD:resident/noren"))
+  (let [merged (run "server-side merge resident/noren -> main"
+                    ["gh" "api" "repos/cloud-itonami/loop-noren/merges"
+                     "-f" "base=main" "-f" "head=resident/noren"
+                     "-f" "commit_message=loop-noren: merge resident pass"])]
+    (when (and (not (:ok? merged))
+               (not (str/includes? (:out merged) "No commits between")))
+      (require-ok! "server-side merge" merged)))
+  (sync-main!))
+
 (defn- dirty? []
   (try
     (-> (.execFileSync cp "git" #js ["status" "--porcelain"] #js {:cwd root})
@@ -83,6 +106,8 @@
 
 (println (str "loop-noren resident " (subs (.toISOString (js/Date.)) 0 19)
               (when-not apply? "  [dry-run]")))
+
+(sync-main!)
 
 ;; 1) 発見 —— 名簿に加えるところまで。接触はしない
 (noren "discover" "--accept")
@@ -108,6 +133,6 @@
   (println "▸ annex copy をスキップ（S3 creds が無い）。raw の実体はローカルにのみ在る"))
 
 ;; 5) 上流へ
-(git "push" "origin" "main")
+(publish-main!)
 
 (println "resident pass 終了")
