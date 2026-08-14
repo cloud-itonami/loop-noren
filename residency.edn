@@ -1,0 +1,16 @@
+;; loop-noren owns this resident process. Root and murakumo only collect the
+;; declaration and compare it with the machine's launchd state.
+{:residency/version 1
+ :residency/repo "cloud-itonami/loop-noren"
+ :jobs
+ [{:id "noren-resident"
+   :label "cloud.itonami.noren.resident"
+   :slot :attested
+   :host :operator
+   :cadence {:interval-seconds 86400}
+   :run ["nbb" "bin/resident.cljs" "--apply"]
+   :plist "deploy/cloud.itonami.noren.resident.plist.template"
+   :credentials [:github-token :b2]
+   :health {:kind :ledger :path "journal"}
+   :adr nil
+   :note "Daily fail-closed discovery pass: observe OSM/Common Crawl, extract through murakumo, archive evidence with git-annex/B2, verify custody, and publish the resulting commit through a dedicated resident branch. It runs on the credential-bearing operator host because WARC range fetch, git-annex, and Git publication do not belong in a Worker isolate."}]}
