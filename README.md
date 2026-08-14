@@ -69,6 +69,10 @@ nbb deploy/install.cljs --apply      # LaunchAgent を入れる（毎日 09:20�
 nbb deploy/install.cljs --remove --apply
 ```
 
+installer は launchd の限定 PATH に Homebrew が含まれないことを考慮し、検出した
+`nbb` の directory を `EnvironmentVariables/PATH` に固定する。これが無いと
+`nbb` の `/usr/bin/env node` が解決できず、常駐は exit 127 になる。
+
 1 日 1 回 `bin/resident.cljs` が discover --accept → tick → commit → annex copy →
 verify → push を**この順で**回す。順序が要るものを plist に割らないのは、
 時刻の偶然で「まだ commit していない raw を copy する」が起きるため。
