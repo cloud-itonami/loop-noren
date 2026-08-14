@@ -53,11 +53,13 @@
 
 (sibling-check)
 (def nbb-path (or (which "nbb") (throw (ex-info "nbb が PATH に無い" {}))))
+(def nbb-dir (path/dirname nbb-path))
 
 (def rendered
   (-> (.readFileSync fs (path/join repo "deploy" (str label ".plist.template")) "utf8")
       (str/replace "@REPO@" repo)
       (str/replace "@NBB@" nbb-path)
+      (str/replace "@NBB_DIR@" nbb-dir)
       (str/replace "@HOME@" home)))
 
 (println (str (if apply? "書く" "(dry-run) 書く") ": " plist-path))

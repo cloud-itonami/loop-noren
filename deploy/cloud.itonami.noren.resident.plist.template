@@ -15,6 +15,13 @@
   </array>
   <!-- LaunchAgent の cwd は "/" なので、repo を明示する。 -->
   <key>WorkingDirectory</key><string>@REPO@</string>
+  <!-- launchd の既定 PATH には Homebrew が無い。nbb 自体が /usr/bin/env node
+       を使うため、nbb の directory を明示しないと exit 127 になる。 -->
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>@NBB_DIR@:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+  </dict>
   <!-- 1 日 1 回。discover は 5 件まで、tick は 1 件までなので、これ以上
        速く回しても外に出るものは増えず、Overpass と相手のサーバに負荷が増えるだけ。 -->
   <key>StartCalendarInterval</key>
