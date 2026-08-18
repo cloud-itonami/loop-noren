@@ -1,0 +1,1 @@
+{:at "2026-08-18T00:20:33.002Z", :http-status "error: fetch failed", :outcome :skip, :prospect "maru.example.test", :reasons [:fetch-failed], :stage :evaluate, :noren/kind :decision}
