@@ -7,10 +7,11 @@
   入れ替えはその 1 entry の PUT で済む。したがって解決順は:
 
     1. 環境変数の明示 override（`MURAKUMO_ENDPOINT` / `MURAKUMO_MODEL`）
-    2. alias 解決（`GET /infer/models/murakumo-main` → `{endpoint, alias-for}`）
-    3. endpoint だけの fallback —— **モデル名は焼かない。** endpoint 先が
-       serving しているモデルに従う（`murakumo-main` を投げれば worker が
-       KV で解決する）
+    2. alias メタデータ解決（`GET /infer/models/murakumo-main`）
+    3. 公開境界 `api.murakumo.cloud` へ alias 名のまま送る
+
+  alias の `endpoint` は Worker が使う内部 origin 情報であり、client は
+  直接使わない。モデルの実体選択は API 側で行う。
 
   具体の model id（`qwen3.6-…` 等）をこのファイルに書いてはいけない。
 
@@ -26,7 +27,7 @@
 (def ^:private cp (js/require "child_process"))
 
 (def alias-url "https://api.murakumo.cloud/infer/models/murakumo-main")
-(def default-endpoint "https://api.murakumo.cloud/v1/messages")
+(def default-endpoint "https://api.murakumo.cloud/v1/chat/completions")
 (def default-model "murakumo-main")
 
 (defn ^:private curl
@@ -53,8 +54,8 @@
     (if (and env-ep env-model)
       {:endpoint env-ep :model env-model :via :env}
       (let [j (some-> (curl ["-sS" "--max-time" "15" alias-url] {:timeout-ms 20000}) json-parse)]
-        (if-let [ep (or env-ep (:endpoint j))]
-          {:endpoint ep
+        (if (or env-ep j)
+          {:endpoint (or env-ep default-endpoint)
            :model (or env-model default-model)
            ;; alias-for は記録するが**使わない**。使うと具体 model id を
            ;; 焼くのと同じことになり、切替に追従しなくなる。
@@ -74,11 +75,9 @@
 (defn request-body
   "endpoint の**形**からリクエストの形を決める。model 名からは決めない。
 
-  実測 2026-08-11: `murakumo-main` の alias は
-  `https://infer.murakumo.cloud/v1/chat/completions`（OpenAI 形、認証不要）を
-  指していた。`https://api.murakumo.cloud/v1/messages`（Anthropic 形）は
-  bearer token を要求する。**どちらを指すかは alias の持ち物**なので、
-  ここは経路の形だけを見て body を組む。"
+  通常は `api.murakumo.cloud/v1/chat/completions`（OpenAI 形）。明示
+  override で Anthropic 形の endpoint を与える場合もあるため、ここは
+  経路の形だけを見て body を組む。"
   [endpoint model prompt system]
   (if (str/includes? endpoint "/chat/completions")
     {:model model :max_tokens 900 :stream false
