@@ -67,18 +67,50 @@
   (when-not (:ok? result)
     (throw (ex-info (str label " failed; resident pass is incomplete") {}))))
 
+(def remote
+  "The remote that actually points at this repository.
+
+  `origin` is not a given here. West names each project's remote after its
+  GitHub org, so the operator host — the one `residency.edn` declares this job
+  runs on — has this repo checked out with a remote called `cloud-itonami` and
+  no `origin` at all. Hard-coding `origin` made every git step of the resident
+  pass fail on the only machine it was ever going to run on, and a LaunchAgent
+  failing at 09:20 writes to a log nobody opens: `git fetch origin main` would
+  have said `'origin' does not appear to be a git repository` once a day,
+  forever, while the job stayed green in `launchctl list`.
+
+  Resolve it instead of assuming it: prefer a remote whose URL names this
+  repository, fall back to `origin` when it exists, then to the single remote
+  when there is exactly one. Returns nil when the checkout has no usable
+  remote, and the caller refuses rather than guessing — a resident pass that
+  cannot publish is not a resident pass that published nothing."
+  (let [names (try (->> (.toString (.execFileSync cp "git" #js ["remote"]
+                                                  #js {:cwd root}) "utf8")
+                        str/split-lines (remove str/blank?) vec)
+                   (catch :default _ []))
+        url-of (fn [n] (try (str/trim (.toString (.execFileSync cp "git" (clj->js ["remote" "get-url" n])
+                                                                #js {:cwd root}) "utf8"))
+                            (catch :default _ "")))
+        matching (first (filter #(str/includes? (url-of %) "loop-noren") names))]
+    (or matching
+        (first (filter #{"origin"} names))
+        (when (= 1 (count names)) (first names)))))
+
 (defn- sync-main! []
   ;; west leaves project checkouts detached. Resolve the remote ref explicitly;
   ;; `git push origin main` would otherwise push a stale local branch named
   ;; main rather than the checked-out HEAD.
-  (require-ok! "fetch origin/main" (git "fetch" "origin" "main"))
-  (require-ok! "fast-forward to origin/main" (git "merge" "--ff-only" "origin/main")))
+  (when-not remote
+    (throw (ex-info "この checkout に使える remote が無い。publish できないので中止する" {})))
+  (require-ok! (str "fetch " remote "/main") (git "fetch" remote "main"))
+  (require-ok! (str "fast-forward to " remote "/main")
+               (git "merge" "--ff-only" (str remote "/main"))))
 
 (defn- publish-main! []
   ;; HEAD is a commit object in west's detached checkout, so Git cannot infer
   ;; that a not-yet-existing destination is a branch. Spell the full ref.
   (require-ok! "push resident branch"
-               (git "push" "origin" "HEAD:refs/heads/resident/noren"))
+               (git "push" remote "HEAD:refs/heads/resident/noren"))
   (let [merged (run "server-side merge resident/noren -> main"
                     ["gh" "api" "repos/cloud-itonami/loop-noren/merges"
                      "-f" "base=main" "-f" "head=resident/noren"
