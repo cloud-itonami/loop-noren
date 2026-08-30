@@ -1,0 +1,110 @@
+The Royal Scotsman（ザ・ロイヤルスコッツマン） - 神楽坂のパブ「The Royal Scotsman（ザ・ロイヤルスコッツマン）」。6種のドラフトビールと定番のフィッシュ＆チップスを提供。ウイスキーもご用意。一人飲みや宴会でご利用ください。 
+ {"@context":"https:\/\/schema.org","@graph":[{"@type":"BreadcrumbList","@id":"https:\/\/royalscotsman.jp\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/royalscotsman.jp#listItem","position":1,"name":"Home","item":"https:\/\/royalscotsman.jp","nextItem":{"@type":"ListItem","@id":"https:\/\/royalscotsman.jp\/archives\/category\/%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88\/#listItem","name":"\u30a4\u30d9\u30f3\u30c8"}},{"@type":"ListItem","@id":"https:\/\/royalscotsman.jp\/archives\/category\/%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88\/#listItem","position":2,"name":"\u30a4\u30d9\u30f3\u30c8","item":"https:\/\/royalscotsman.jp\/archives\/category\/%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88\/","nextItem":{"@type":"ListItem","@id":"https:\/\/www.royalscotsman.jp\/blog\/event\/ogna-seminar20230723\/#listItem","name":"\u5357\u4fe1\u5dde\u30d3\u30fc\u30eb\u30fb\u30ea\u30cb\u30e5\u30fc\u30a2\u30eb\u65b0\u30d6\u30e9\u30f3\u30c9\u300cOGNA\u300d\u3092\u5b66\u3076\u3002\u3010 \u98f2\u3093\u3067\uff01\u98df\u3079\u3066\uff01\u5b66\u6821\u3000Season1 \u3011"},"previousItem":{"@type":"ListItem","@id":"https:\/\/royalscotsman.jp#listItem","name":"Home"}},{"@type":"ListItem","@id":"https:\/\/www.royalscotsman.jp\/blog\/event\/ogna-seminar20230723\/#listItem","position":3,"name":"\u5357\u4fe1\u5dde\u30d3\u30fc\u30eb\u30fb\u30ea\u30cb\u30e5\u30fc\u30a2\u30eb\u65b0\u30d6\u30e9\u30f3\u30c9\u300cOGNA\u300d\u3092\u5b66\u3076\u3002\u3010 \u98f2\u3093\u3067\uff01\u98df\u3079\u3066\uff01\u5b66\u6821\u3000Season1 \u3011","previousItem":{"@type":"ListItem","@id":"https:\/\/royalscotsman.jp\/archives\/category\/%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88\/#listItem","name":"\u30a4\u30d9\u30f3\u30c8"}}]},{"@type":"CollectionPage","@id":"https:\/\/royalscotsman.jp\/#collectionpage","url":"https:\/\/royalscotsman.jp\/","name":"The Royal Scotsman\uff08\u30b6\u30fb\u30ed\u30a4\u30e4\u30eb\u30b9\u30b3\u30c3\u30c4\u30de\u30f3\uff09 - \u795e\u697d\u5742\u306e\u30d1\u30d6\u300cThe Royal Scotsman\uff08\u30b6\u30fb\u30ed\u30a4\u30e4\u30eb\u30b9\u30b3\u30c3\u30c4\u30de\u30f3\uff09\u300d\u30026\u7a2e\u306e\u30c9\u30e9\u30d5\u30c8\u30d3\u30fc\u30eb\u3068\u5b9a\u756a\u306e\u30d5\u30a3\u30c3\u30b7\u30e5\uff06\u30c1\u30c3\u30d7\u30b9\u3092\u63d0\u4f9b\u3002\u30a6\u30a4\u30b9\u30ad\u30fc\u3082\u3054\u7528\u610f\u3002\u4e00\u4eba\u98f2\u307f\u3084\u5bb4\u4f1a\u3067\u3054\u5229\u7528\u304f\u3060\u3055\u3044\u3002","description":"\u795e\u697d\u5742\u306e\u30d1\u30d6\u300cThe Royal Scotsman\uff08\u30b6\u30fb\u30ed\u30a4\u30e4\u30eb\u30b9\u30b3\u30c3\u30c4\u30de\u30f3\uff09\u300d\u30026\u7a2e\u306e\u30c9\u30e9\u30d5\u30c8\u30d3\u30fc\u30eb\u3068\u5b9a\u756a\u306e\u30d5\u30a3\u30c3\u30b7\u30e5\uff06\u30c1\u30c3\u30d7\u30b9\u3092\u63d0\u4f9b\u3002\u30a6\u30a4\u30b9\u30ad\u30fc\u3082\u3054\u7528\u610f\u3002\u4e00\u4eba\u98f2\u307f\u3084\u5bb4\u4f1a\u3067\u3054\u5229\u7528\u304f\u3060\u3055\u3044\u3002","inLanguage":"ja","isPartOf":{"@id":"https:\/\/royalscotsman.jp\/#website"},"breadcrumb":{"@id":"https:\/\/royalscotsman.jp\/#breadcrumblist"},"about":{"@id":"https:\/\/royalscotsman.jp\/#organization"}},{"@type":"Organization","@id":"https:\/\/royalscotsman.jp\/#organization","name":"The Royal Scotsman\uff08\u30b6\u30fb\u30ed\u30a4\u30e4\u30eb\u30b9\u30b3\u30c3\u30c4\u30de\u30f3\uff09","description":"\u795e\u697d\u5742\u306e\u30d1\u30d6\u300cThe Royal Scotsman\uff08\u30b6\u30fb\u30ed\u30a4\u30e4\u30eb\u30b9\u30b3\u30c3\u30c4\u30de\u30f3\uff09\u300d\u30026\u7a2e\u306e\u30c9\u30e9\u30d5\u30c8\u30d3\u30fc\u30eb\u3068\u5b9a\u756a\u306e\u30d5\u30a3\u30c3\u30b7\u30e5\uff06\u30c1\u30c3\u30d7\u30b9\u3092\u63d0\u4f9b\u3002\u30a6\u30a4\u30b9\u30ad\u30fc\u3082\u3054\u7528\u610f\u3002\u4e00\u4eba\u98f2\u307f\u3084\u5bb4\u4f1a\u3067\u3054\u5229\u7528\u304f\u3060\u3055\u3044\u3002","url":"https:\/\/royalscotsman.jp\/"},{"@type":"WebSite","@id":"https:\/\/royalscotsman.jp\/#website","url":"https:\/\/royalscotsman.jp\/","name":"The Royal Scotsman\uff08\u30b6\u30fb\u30ed\u30a4\u30e4\u30eb\u30b9\u30b3\u30c3\u30c4\u30de\u30f3\uff09","description":"\u795e\u697d\u5742\u306e\u30d1\u30d6\u300cThe Royal Scotsman\uff08\u30b6\u30fb\u30ed\u30a4\u30e4\u30eb\u30b9\u30b3\u30c3\u30c4\u30de\u30f3\uff09\u300d\u30026\u7a2e\u306e\u30c9\u30e9\u30d5\u30c8\u30d3\u30fc\u30eb\u3068\u5b9a\u756a\u306e\u30d5\u30a3\u30c3\u30b7\u30e5\uff06\u30c1\u30c3\u30d7\u30b9\u3092\u63d0\u4f9b\u3002\u30a6\u30a4\u30b9\u30ad\u30fc\u3082\u3054\u7528\u610f\u3002\u4e00\u4eba\u98f2\u307f\u3084\u5bb4\u4f1a\u3067\u3054\u5229\u7528\u304f\u3060\u3055\u3044\u3002","inLanguage":"ja","publisher":{"@id":"https:\/\/royalscotsman.jp\/#organization"}}]}
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+ img.wp-smiley, img.emoji {
+ display: inline !important;
+ border: none !important;
+ box-shadow: none !important;
+ height: 1em !important;
+ width: 1em !important;
+ margin: 0 0.07em !important;
+ vertical-align: -0.1em !important;
+ background: none !important;
+ padding: 0 !important;
+ }
+/*# sourceURL=wp-emoji-styles-inline-css */
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}.has-text-align-center{text-align:center}.has-text-align-left{text-align:left}.has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+/*# sourceURL=wp-block-library-inline-css */
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+ window.dataLayer = window.dataLayer || [];
+ function gtag(){dataLayer.push(arguments);}
+ gtag('js', new Date());
+ gtag('config', 'UA-175978806-1');
+ The Royal Scotsman 
+ Our story 
+ News 
+ Menu 
+ Take away & Delivery 
+ --> 
+ Shop info 
+ Recruit 
+ 登録無料　 メルマガ会員募集！ 
+ 詳細はコチラ 
+ ご予約　 03-6280-8852 
+ JP 
+ Our Story 
+ Menu 
+ News 
+ Shop Info 
+ Recruit 
+ 03-6280-8852 
+ SCOTTISH CUISINE DRINK 
+ PUBLIC HOUSE 
+ The Royal Scotsman 
+ since 2011 
+ open 
+ Tue. - Fri. 17:00～23:00 
+ Sat. 15:00～23:00 
+ Sun. and Holidays 15:00～22:00
+ open 
+ Tue. - Fri. 17:00～23:00 
+ Sat. 15:00～23:00 
+ Sun. and Holidays 15:00～22:00
+ 新型コロナウイルスの影響で、営業時間の変更または臨時休業をする場合がございます。 
+ ご迷惑をお掛けしますが、ご理解の程、何卒よろしくお願い申し上げます。 -->
+ 営業時間 「まん延防止等重点措置」も終わり徐々にこれまでの日常に向かっていることを嬉しく思います。まだ深夜帯は地域的にも静かですし、終電が早まったままですので、しばらくは営業時間を以下の通りとさせていただきます。 火～金　　　17&#8230; 
+The post 営業時間 first appeared on 神楽坂の小さなスコティッシュパブ　The Royal Scotsman&#8230;. 
+ 詳細はコチラ 
+ OGNA 
+ 23.07.02 
+ 南信州ビール・リニューアル新ブランド「OGNA」を学ぶ。【 飲んで！食べて！学校　Season1 】 
+ イギリス 
+ 23.04.25 
+ 5月6日（土）チャールズ3世国王　戴冠式の公式レシピ「コロネーションキッシュ」 
+ イベント 
+ 23.03.26 
+ マルス・サイン・ラリー（4月1日～8月1日） 
+ ウイスキー 
+ 23.01.10 
+ シーバスリーガル ミズナラ12年 スクラッチキャンペーン 
+ The Royal Scotsman 
+ 22.12.10 
+ ラムのロースト・ミントソース：11周年限定メニュー（12/13~18） 
+ JR飯田橋駅西口より徒歩5分。 
+ クラフトビールとオーナーシェフ・小貫友寛の英国料理が楽しめる 
+ スコティッシュパブ「ザ・ロイヤルスコッツマン」。 
+ パンクIPAなどの6種類のクラフトビールを、 
+ 徹底した品質管理をもとに、皆様にご提供しております。 
+ お料理はパブで定番のフィッシュ＆チップスはもちろん、 
+ フランスで修行をしたオーナーの 
+ 手の込んだ英国料理をお楽しみ下さい。
+ スコッツマン のこだわり 
+ 最高のビールを提供するため、 
+ 空冷式による樽の管理と 
+ ビールごとにガス圧の調整をし 
+ ビール本来の味と香りを維持しています。
+ パブリックハウス・ロイヤル・スコッツマン 
+ Publick House The Royal Scotsman 
+ 営業時間 
+ ［火～金］17:00～23:00（L.O.） 
+ ［土］15:00～23:00（L.O.） 
+ ［日・祝日］15:00～22:00（L.O.） 
+ ※営業時間が変更になることがあります。 
+ 必ず News をご確認下さい。
+ 定休日 
+ ［月］ 
+ ※臨時休業あり。必ず News をご確認ください。
+ アクセス 
+ 〒162-0825　東京都新宿区神楽坂3-6-28 土屋ビル1F 
+ 東京メトロ各線「飯田橋駅」B3出口より徒歩4分 
+ JR中央・総武線「飯田橋駅」西口出口より徒歩5分 
+ 都営大江戸線「牛込神楽坂駅」A3出口より徒歩5分
+ ポリシー 
+ 店内は前面禁煙となっております。 
+ また新宿区の条例により、 店外でも禁煙となります。 
+ 予めご了承ください。
+ /***home logo***/
+ $('#curve').arctext({radius:250});
