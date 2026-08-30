@@ -1,0 +1,10 @@
+{
+  :business-name "KAGURAZAKA GOJUBAN Co., Ltd.",
+  :email nil,
+  :email-context nil,
+  :opt-out-text nil,
+  :kind :organization,
+  :own-site? true,
+  :closed? false,
+  :confidence 0.95
+}
