@@ -1,0 +1,10 @@
+```edn
+{:business-name nil
+ :email nil
+ :email-context nil
+ :opt-out-text nil
+ :kind nil
+ :own-site? false
+ :closed? nil
+ :confidence 0.8}
+```
