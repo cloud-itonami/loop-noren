@@ -1,0 +1,10 @@
+```edn
+{:business-name "水漫庭"
+ :email nil
+ :email-context nil
+ :opt-out-text nil
+ :kind :organization
+ :own-site? false
+ :closed? nil
+ :confidence 0.9}
+```
