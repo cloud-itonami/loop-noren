@@ -1,0 +1,8 @@
+Yamituki/Yamiyami ���~�c�L�J���[�E���~���~�J���[ 
+ 0&&parent.frames.length) {
+ d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+ if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i 
+<!--
+body { min-width:1280px;
+ margin:0px;
+ background-

@@ -1,0 +1,385 @@
+神楽坂 中華料理 水漫庭（神楽坂/中華料理） - 楽天ぐるなび 
+ window.googletag = window.googletag || {cmd: []};
+ googletag.cmd.push(function() {
+ let slot = googletag.defineSlot('/7753536/gnavi_pc_shop-r_01', [200, 200], 'div-gpt-ad-1605492882375-0');
+ slot.setTargeting('restaurantid', ['gax2600']);
+ slot.setTargeting('pref', ['pref13']);
+ slot.setTargeting('areal', ['areal2184']);
+ slot.setTargeting('aream', ['aream2192']);
+ slot.setTargeting('areas', ['areas2192']);
+ slot.setTargeting('bdg', ['bdgs0090','ldgs0090']);
+ slot.setTargeting('kods', ['kods00263','kods00153','kods11882','kods12420','kods00065']);
+ slot.addService(googletag.pubads());
+ googletag.pubads().enableSingleRequest();
+ googletag.pubads().collapseEmptyDivs();
+ googletag.enableServices();
+ });
+window._vwo_code || (function() {
+var account_id=906716,
+version=2.1,
+settings_tolerance=2000,
+hide_element='body',
+hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;transition:none !important;',
+/* DO NOT EDIT BELOW THIS LINE */
+f=false,w=window,d=document,v=d.querySelector('#vwoCode'),cK='_vwo_'+account_id+'_settings',cc={};try{var c=JSON.parse(localStorage.getItem('_vwo_'+account_id+'_config'));cc=c&&typeof c==='object'?c:{}}catch(e){}var stT=cc.stT==='session'?w.sessionStorage:w.localStorage;code={nonce:v&&v.nonce,library_tolerance:function(){return typeof library_tolerance!=='undefined'?library_tolerance:undefined},settings_tolerance:function(){return cc.sT||settings_tolerance},hide_element_style:function(){return'{'+(cc.hES||hide_element_style)+'}'},hide_element:function(){if(performance.getEntriesByName('first-contentful-paint')[0]){return''}return typeof cc.hE==='string'?cc.hE:hide_element},getVersion:function(){return version},finish:function(e){if(!f){f=true;var t=d.getElementById('_vis_opt_path_hides');if(t)t.parentNode.removeChild(t);if(e)(new Image).src='https://dev.visualwebsiteoptimizer.com/ee.gif?a='+account_id+e}},finished:function(){return f},addScript:function(e){var t=d.createElement('script');t.type='text/javascript';if(e.src){t.src=e.src}else{t.text=e.text}v&&t.setAttribute('nonce',v.nonce);d.getElementsByTagName('head')[0].appendChild(t)},load:function(e,t){var n=this.getSettings(),i=d.createElement('script'),r=this;t=t||{};if(n){i.textContent=n;d.getElementsByTagName('head')[0].appendChild(i);if(!w.VWO||VWO.caE){stT.removeItem(cK);r.load(e)}}else{var o=new XMLHttpRequest;o.open('GET',e,true);o.withCredentials=!t.dSC;o.responseType=t.responseType||'text';o.onload=function(){if(t.onloadCb){return t.onloadCb(o,e)}if(o.status===200||o.status===304){w._vwo_code.addScript({text:o.responseText})}else{w._vwo_code.finish('&e=loading_failure:'+e)}};o.onerror=function(){if(t.onerrorCb){return t.onerrorCb(e)}w._vwo_code.finish('&e=loading_failure:'+e)};o.send()}},getSettings:function(){try{var e=stT.getItem(cK);if(!e){return}e=JSON.parse(e);if(Date.now()>e.e){stT.removeItem(cK);return}return e.s}catch(e){return}},init:function(){if(d.URL.indexOf('__vwo_disable__')>-1)return;var e=this.settings_tolerance();w._vwo_settings_timer=setTimeout(function(){w._vwo_code.finish();stT.removeItem(cK)},e);var t;if(this.hide_element()!=='body'){t=d.createElement('style');var n=this.hide_element(),i=n?n+this.hide_element_style():'',r=d.getElementsByTagName('head')[0];t.setAttribute('id','_vis_opt_path_hides');v&&t.setAttribute('nonce',v.nonce);t.setAttribute('type','text/css');if(t.styleSheet)t.styleSheet.cssText=i;else t.appendChild(d.createTextNode(i));r.appendChild(t)}else{t=d.getElementsByTagName('head')[0];var i=d.createElement('div');i.style.cssText='z-index: 2147483647 !important;position: fixed !important;left: 0 !important;top: 0 !important;width: 100% !important;height: 100% !important;background: white !important;display: block !important;';i.setAttribute('id','_vis_opt_path_hides');i.classList.add('_vis_hide_layer');t.parentNode.insertBefore(i,t.nextSibling)}var o=window._vis_opt_url||d.URL,s='https://dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(o)+'&vn='+version;if(w.location.search.indexOf('_vwo_xhr')!==-1){this.addScript({src:s})}else{this.load(s+'&x=true')}}};w._vwo_code=code;code.init();})();(function(){var i=window;function t(){if(i._vwo_code){var e=t.hidingStyle=document.getElementById('_vis_opt_path_hides')||t.hidingStyle;if(!i._vwo_code.finished()&&!_vwo_code.libExecuted&&(!i.VWO||!VWO.dNR)){if(!document.getElementById('_vis_opt_path_hides')){document.getElementsByTagName('head')[0].appendChild(e)}requestAnimationFrame(t)}}}t()})();
+ 楽天ぐるなび 東京 飯田橋・四ツ谷・神楽坂 神楽坂 神楽坂 中華料理水漫庭 店舗トップ 
+ 業態 
+ 神楽坂の本格中華料理店 
+ 近隣駅 
+ 飯田橋駅 
+ 飯田橋駅&times;中華料理 
+ 牛込神楽坂駅 
+ 牛込神楽坂駅&times;中華料理 
+ 神楽坂駅 
+ 神楽坂駅&times;中華料理 
+ エリア 
+ 東京 
+ 東京&times;中華料理 
+ 飯田橋・四ツ谷・神楽坂 
+ 飯田橋・四ツ谷・神楽坂&times;中華料理 
+ 神楽坂 
+ 神楽坂&times;中華料理 
+ 九段下 
+ 九段下&times;中華料理 
+ 市ヶ谷 
+ 市ヶ谷&times;中華料理 
+ ジャンル 
+ 中華 
+ 神楽坂&times;中華&times;個室 
+ 中華料理 
+ 神楽坂&times;中華料理&times;個室 
+ 【飯田橋駅1分】オーダー式食べ放題 本格中華料理 
+ 神楽坂 中華料理 水漫庭 
+ 貸切宴会60名様迄対応 懇親会や職場宴会同窓会に最適 
+ カグラザカチュウカリョウリ スイマンテイ 
+ 楽天POINT 
+ ネット予約で 人数×50ポイント 
+ お得情報 
+ ぐるなびポイント使える 
+ テイクアウト可 
+ 03-6280-7696
+ お問合わせの際はぐるなびを見た というとスムーズです。 
+ 空席確認・予約する 
+ 送る 
+ 店舗トップ 
+ メニュー 
+ 飲み放題付コース 
+ お料理のみコース 
+ 本格中華料理 
+ ランチメニュー 
+ 豊富なドリンク 
+ 席・貸切 
+ 席 
+ 貸切 
+ 写真 
+ すべて 
+ 料理･ドリンク 
+ 店内 
+ 外観 
+ こだわり 
+ こだわり 
+ 地図 
+ 地図 
+ クーポン 
+ ネット予約クーポン対応 
+ 口コミ 
+ 写真付のおいしい 口コミをご紹介！ 
+ 03-6280-7696 
+ 空席確認・予約する 
+ [神楽坂駅ｽｸﾞ]本場中国の味をリーズナブルに堪能！ 
+歓送迎会に◎貸切宴会も大歓迎(最大60名様)
+ 飯田橋駅B3番出口徒歩1分・神楽坂下にあるリーズナブルな中華料理店"水漫庭" 
+◆日本人の好みに合わせたこだわり中華料理 
+20年以上のキャリアを持つ中国出身のオーナーシェフが 
+日本人の好みに合わせた味付けでお料理をご提供致します 
+中国食材や旬の高級食材などを使用した創作メニューも自慢 
+◆お得なご宴会コース 
+【季節コース】3,200円本格麻婆豆腐＆季節野菜上海小籠包，海老チリなど　〈全10品〉 
+【4,000円コース】ズワイ蟹爪のフライや黒酢入り酢豚など　　　　〈全10品〉 
+【5,500円コース】本格麻婆豆腐や広東焼きそばなど　　　　〈全12品〉 
+【7,000円コース】フカヒレ・鮑・大正海老など　　　　　〈全12品〉 
+★飲み放題別途追加2,000円からご用意できます！
+ 当店のこだわり 
+ 食材や調理法、空間から接客まで。お客様をおもてなし。 
+ 食べ飲み放題 70種以上の料理が食べ放題＆飲み放題 当日注文OK!70種以上のお料理の中からお好きな料理とドリンクが2時間食べ飲み放題で3,880円！オーナーシェフ渾身のお料理を思う存分お楽しみください。前菜、… 詳細を見る 
+ 大人数で宴会 高級食材使用の本格中華料理コース 水漫庭ではフカヒレやずわい蟹、アワビ、ナマコなど豪華な食材を使用した高級中華料理店も顔負けの贅沢なお料理を、他にはないリーズナブルな価格でお召し上… 詳細を見る 
+ 麻婆豆腐 水漫庭No.1人気！本格麻婆豆腐 リピーター多数！当店の看板メニュー、本格四川風の麻婆豆腐！山椒を使用し、ほどよくピリ辛で癖になる味わいで大変ご好評いただいております。麻婆豆腐のほ… 詳細を見る 
+ 中華料理 日本人の口に合わせた本格中華料理 水漫庭の中華料理は日本歴約20年のベテランの中国人シェフが手がけております。日本人の味に合わせた味つけで調理し、日本人の方に親しんでいただける味に仕… 詳細を見る 
+ 貸切あり 最大60名様迄のご宴会に対応！ 飯田橋エリアで歓送迎会､懇親会､会社宴会､同窓会などの大規模宴会をご検討の方に!貸切宴会のご予約も好評受付中です！飯田橋駅から1分と好立地に存在する… 詳細を見る 
+ トピックス 当店のおいしい情報や オススメ情報をお知らせ 
+ 【季節コース】 3,200円本格麻婆豆腐＆季節野菜上海小籠包 
+ ◆ご宴会コース：歓送迎会・懇親会に！2H飲放題付,500円～ 
+ ◆ご会食に最適：【2.5時間飲み放題付】コースございます 
+ ◆ランチメニュー：種類豊富！日替りランチは700円からご用意 
+ ◆一品料理：当店人気の麻婆豆腐など日本人に合わせた優しい料理 
+ ◆当店までの道のり：地下鉄飯田橋駅B3出口徒歩1分の好立地！ 
+ おすすめメニュー 
+ ちょい呑みセット 
+ Cセット 
+ 麻婆麺（辛口） 
+ メニューをもっと見る 
+ ネット予約カレンダー 
+ 来店日からコースを探す 
+ 貸切情報 
+ 歓送迎会･懇親会･会社宴会などの団体宴会に！店内貸切（40～60名様） 
+ 飯田橋徒歩1分の便利なアクセス！広々としたワンフロアの店内で一体感のあるご宴会をお楽しみいただけます。お店の貸切は、40～60名様までご利用可能。歓送迎会、忘年会、新年会、企業のご宴会、同窓会、謝恩会、打ち上げ、など様々なシーンでご利用ください。 
+ 貸切情報をもっと見る 
+ ピックアップ写真 
+ ご宴会に！2H飲み放題付ご宴会コースは　5,200円から 
+ 貸切宴会に！40名様～60名様迄対応のテーブル席をご用意 
+ アワビや海老などの豪華食材を使用したコースもご用意 
+ 当店おすすめ！女性からも大人気のピリ辛麻婆麺 
+ 写真をもっと見る 
+ ユーザー投稿写真（口コミ） 
+ ※写真及びコメントはユーザーが食事をした当時の内容ですので、最新の情報とは異なる可能性があります。 
+ きゃぱとんさん 
+ タンタン麺は大好きなのでよく食べますが辛さといいコク… 続きを読む＞ 
+ ユーザー投稿写真をもっと見る 
+ 感染症対策 
+ お店の取り組み 14/14件実施中（2022/02/04更新） 
+ 全従業員新型コロナワクチン接種済 
+ 店内や設備等の消毒・除菌・洗浄 
+ お客様の入れ替わり都度の消毒 
+ 除菌・消毒液の設置 
+ 店内換気の実施 
+ テーブルやカウンターに仕切りあり 
+ テーブル・席間隔の調整 
+ 他グループとの相席なし 
+ 料理は個々に提供（大皿提供なし） 
+ キャッシュレス決済対応 
+ お会計時のコイントレイの利用 
+ スタッフのマスク着用 
+ スタッフの手洗い・消毒・うがい 
+ スタッフの検温を実施 
+ お客様へのお願い 4/4件のお願い 
+ 体調不良のお客様の入店お断り 
+ お客様入店時の検温 
+ 混雑時入店制限あり 
+ 食事中以外のマスク着用のお願い 
+ 神楽坂 中華料理 水漫庭 店舗情報 
+ 店名 
+ 神楽坂 中華料理 水漫庭 
+ カグラザカチュウカリョウリ スイマンテイ 
+ 電話番号・FAX 
+ 03-6280-7696 
+ お問合わせの際はぐるなびを見たというとスムーズです。 
+ ネット予約はこちらから 
+ FAX： 03-6280-7696 
+ 住所 
+ 〒162-0825 
+ 東京都新宿区神楽坂2-10 カグラビルズB1 
+ 大きな地図で見る 
+ 地図印刷 
+ アクセス 
+ 地下鉄有楽町線 飯田橋駅 B3番出口 徒歩1分 
+ 地下鉄南北線 飯田橋駅 B3番出口 徒歩1分 
+ 地下鉄東西線 飯田橋駅 B3番出口 徒歩1分 
+ 都営大江戸線 飯田橋駅 B3番出口 徒歩1分 
+ ＪＲ 飯田橋駅 西口 徒歩1分 
+ 営業時間 
+ 月～金 
+17:00～23:00 
+（L.O.22:30） 
+※日により、ラストオーダー時間の変更がございます。基本的には、閉店30分前にラストオーダーとなります。 
+土・日・祝 
+17:00～21:30 
+（L.O.21:00） 
+月～日・祝日 
+ランチ　11:00～15:00 
+※まん延防止等重点措置により、1／21〜2/13の期間営業時間を短縮し、21時閉店とさせて頂きます。 
+※お酒の提供は11時〜20時まで、1テーブル4名様まで。
+ 定休日 
+ 年中無休 
+ 平均予算 
+ 3,880 円（通常平均） 
+ 3,880円（宴会平均） 
+ 850円（ランチ平均） 
+ クレジットカード 
+ VISA 
+ MasterCard 
+ JCB 
+ アメリカン・エキスプレス 
+ 三菱UFJカード 
+ DC 
+ 電子マネー/その他 
+ 楽天ペイ 
+ キャンセルについて 
+ 予約をキャンセルする場合は、以下の通りとなります。 
+予約の5日前までにお電話にて受け付けます。 
+【キャンセル料】 
+0％ 
+【備考】 
+人数変更は当日の15時まで承ります。 
+当日のキャンセルはご予算の100パーセントお支払いいただきます。 
+ 開店年月日 
+ 2011年8月 
+ ※事業者名、代表者または業務責任者及び連絡先につきましては店舗もしくはぐるなびへお問い合わせください。 
+ 席・設備 
+ 総席数 
+ 48席 
+ 宴会最大人数 
+ 60名様（着席時） 
+ 貸切可能人数 
+ 40名様
+ ～60名様
+ 禁煙・喫煙 
+ 店舗へお問い合わせください 
+ バリアフリー 
+ 車いすで入店可 
+ ※バリアフリーの詳細はお店にお問い合せください 
+ お子様連れ 
+ お子様連れOK 
+ ペット同伴 
+ 同伴不可 
+ 外国語対応 
+ 外国語メニューあり： 
+ 中国語（簡体字）メニューあり 
+ 中国語（繁体字）メニューあり 
+ 外国語対応スタッフ： 
+ 中国語を話せるスタッフがいる 
+ 携帯・Wi-Fi・電源 
+ 携帯の電波が入る（
+ au
+ 、ソフトバンク
+ 、NTT ドコモ
+ ）
+ Wi-Fi使えます（
+ docomo Wi-Fi
+ ）
+ 電源利用可 
+ その他の設備・サービス 
+ 23時以降も食事ができる 
+ 日曜営業あり 
+ メニューのサービス・関連情報 
+ メニューのサービス 
+ 食べ放題メニューあり 
+ 飲み放題メニューあり 
+ ランチメニューあり 
+ このお店のメニュー： 
+ 飲み放題付コース 
+ お料理のみコース 
+ 本格中華料理 
+ ランチメニュー 
+ 豊富なドリンク 
+ ランチタイムのサービス 
+ デザート付きランチ 
+ ご飯おかわり自由 
+ パンおかわり自由 
+ 14時以降もランチメニューあり 
+ たっぷりランチ 
+ テイクアウト 
+ テイクアウト可
+ ドギーバッグ可
+ （食べ残しをお持ち帰りいただけます）
+ 利用シーン 
+ 女子会 
+ 昼の接待 
+ 夜の接待 
+ デート 
+ 記念日 
+ 合コン 
+ お一人様 
+ 同窓会 
+ 忘年会・新年会 
+ 歓迎会 
+ 送別会 
+ 打ち上げ・キックオフ 
+ お祝い事 
+ 家族 
+ 大人数 
+ 友人・知人 
+ 夫婦 
+ 結納 
+ 法事 
+ お店のウリ 
+ オーダー式食べ放題 
+ 飯田橋の中華料理店 
+ 貸切最大60名様迄 
+ お得な情報をGET！ 
+ 当店の最新情報やお得な限定特典をメールで受け取ることができます。 
+ 登録する 
+ 神楽坂 中華料理 水漫庭 のサービス一覧 
+ オフィシャル 
+ページ
+ シェフ紹介： 
+ シェフのプロフィール 
+ Foreign Language Version 
+ English 
+ 简体中文 
+ 繁體中文 
+ 한국어 
+ 神楽坂 中華料理 水漫庭 
+ TEL 03-6280-7696 
+ 空席確認・予約する 
+ 関連リンク 
+ よくある検索キーワード 
+ 水漫庭
+ 周辺のお店 
+ 神楽坂 中華料理 縁香園 
+ 本場中華ダイニング 食之居 
+ 宝龍 
+ おすすめの特集 
+ 忘年会・新年会特集 
+ 一年を締めくくる忘年会から新年会まで年末年始のイベントにぴったりのお店、宴会会場を一挙ご紹介 
+ 歓迎会・送別会特集 
+ こだわり料理や個室、貸切など条件にピッタリのお店をご紹介 
+ ビール特集 
+ ビアガーデンやテラス席でこだわりの美味しいビールが楽しめるお店をご紹介 
+ 打ち上げ・キックオフ特集 
+ 全国のレストラン・居酒屋などから厳選したお店をご紹介 
+ クリスマスディナー特集 
+ 大切な人と行きたいレストラン、友達・仲間と盛り上がるお店まで、クリスマスにぴったりなお店をご紹介 
+ デート特集 
+ 夜景のきれいなレストラン紹介やグルメ情報も充実 
+ 誕生日・記念日特集 
+ 大切な日のレストラン探しに必見 
+ お得なサービス 
+ 楽天ポイント 貯まる
+ ネット予約でぐるなびポイント使える 
+ ※サービスをご利用の際は、来店前にお店にお問い合わせください。 
+ 幹事さん向け お店・日程調整ツール 
+ 大人数の日程調整が超カンタン 
+ 日程を調整する 
+ 候補店に追加する 
+ 調整丸 
+ スマートフォンで見る 
+ gax2600 
+ 楽天ぐるなびアプリ 
+ 楽天ぐるなび 
+ GPS、エリア・ジャンルなどからお店を探せる！ 
+ for スマートフォン 
+ Android版 
+ iPhone版 
+ PR 
+ googletag.cmd.push(function() { googletag.display('div-gpt-ad-1605492882375-0'); });
+ ページ上部へ戻る 
+ © Gurunavi, Inc. 
+ var sc_plan_data = {
+ "plan_existence1":"true",
+ "plan_existence2":"true",
+ "plan_existence3":"1"
+ };
+ window.dataLayer = window.dataLayer || [];
+ dataLayer.push({
+ "dLshopword":"PLN002,SVF1431101"
+ });
+ var pageData = {
+ "navigation": {
+ "page_type":"detail",
+ "member":"1",
+ "reservation":"1",
+ "point":"1" },
+ "items":[{
+ "restaurantID":"gax2600"
+ }]
+ };
+ (function () {
+ var tagjs = document.createElement("script");
+ var s = document.getElementsByTagName("script")[0];
+ tagjs.async = true;
+ tagjs.src = "//s.yjtag.jp/tag.js#site=ugpOkqj,DSk710K&referrer=" + encodeURIComponent(document.location.href) + "";
+ s.parentNode.insertBefore(tagjs, s);
+ }());
+ var yahoo_conversion_id = 1000002283;
+ var yahoo_conversion_label = "D2g6COmz-AIQl-W7ygM";
+ var yahoo_conversion_value = 0;
