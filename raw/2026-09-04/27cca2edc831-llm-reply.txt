@@ -1,0 +1,10 @@
+{
+  :business-name "神楽坂五〇番",
+  :email nil,
+  :email-context nil,
+  :opt-out-text nil,
+  :kind :organization,
+  :own-site? true,
+  :closed? nil,
+  :confidence 0.95
+}
