@@ -1,0 +1,617 @@
+神楽坂五〇番 | 神楽坂にある大きな肉まん・点心専門店 
+ $(function() {
+$( "#tabs" ).tabs();
+$('a.tab_link').click(function() {
+$( "#tabs" ).tabs( "option", "active", $(this).attr('rel') );
+$( "#tabs" ).tabs( "refresh" );
+return false;
+});
+}); 
+ .wishlist_table .add_to_cart, a.add_to_wishlist.button.alt { border-radius: 16px; -moz-border-radius: 16px; -webkit-border-radius: 16px; } 
+ (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+ })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+ ga('create', 'UA-69158979-1', 'auto');
+ ga('send', 'pageview');
+ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.4\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/www.50ban.jp\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.3"}};
+ !function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i 
+img.wp-smiley,
+img.emoji {
+ display: inline !important;
+ border: none !important;
+ box-shadow: none !important;
+ height: 1em !important;
+ width: 1em !important;
+ margin: 0 .07em !important;
+ vertical-align: -0.1em !important;
+ background: none !important;
+ padding: 0 !important;
+}
+.tp-caption a{color:#ff7302;text-shadow:none;-webkit-transition:all 0.2s ease-out;-moz-transition:all 0.2s ease-out;-o-transition:all 0.2s ease-out;-ms-transition:all 0.2s ease-out}.tp-caption a:hover{color:#ffa902}
+.woocommerce form .form-row .required { visibility: visible; }
+ .rounded, .catalog-menu img, #secondary .testi-author img, .menu-thumb .rounded img, .catalog-menu .rounded img, .dt-sc-pr-tb-col .dt-sc-rounded, .dt-sc-progress, .dt-sc-progress .dt-sc-bar {
+ behavior: url(/wp-content/themes/sushi_prod/PIE.php);
+ }
+/* */
+  nav#main-menu ul li a, .mobile-menu { color:#000000; } nav#main-menu ul > li:hover > a, #main-menu ul ul li.current_page_item a, #main-menu ul ul li.current_page_item ul li.current_page_item a, #main-menu ul ul li.current_page_item ul li a:hover { color:#a9a8a8; } H1 {font-family:Abel; } H2 {font-family:Abel; } H3 {font-family:Abel; } H4 {font-family:Abel; } h1, h2, h3, h4, h5, h6 {
+color: #5a5a5a;
+font-style: normal; 
+font-family: Helvetica,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+}
+body, .mobile-menu, .side-nav-container ul li a, .widget.widget_nav_menu ul li a, footer h4, .intro-text.type1 h6, .intro-text.type1 h4, .dt-sc-team .entry-title h2, .dt-sc-team .entry-title h6, #secondary .testi-author h4, input[type="text"], input[type="email"], input[type="password"], input.text, textarea, .tb-content .rounded h3, #tribe-bar-form label, .event-meta.fa {
+ font-family: Helvetica,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+ font-style: normal;
+}
+#menu-main-menu {
+ font-family: Helvetica,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+}
+h1, h2, h3, h4, h5, h6, input[type="submit"], .post-details, ul.tabs-frame li, .dt-sc-button, .products .product span.price, .dt-sc-price, .dt-sc-specials-list li .item-price, .dt-sc-offer-list li, .breadcrumb a, .pagination-wrapper, .menu-sidebar li a, .side-nav li a, ul.recent-post li a, .widget_product_categories li a, .widget_best_sellers ul li a, .widget_onsale ul li a, .woocommerce-tabs ul.tabs li a, ul.dt-sc-tabs-frame li a, ul.dt-sc-tabs-vertical-frame li a, ul.dt-sc-tabs li a, .products .product-details a.button, .widget_best_sellers ul li span.amount, .woocommerce .shop_table.cart, .button, label, .hfeed vcalendar, .woocommerce.widget ul li a, .sorting-container a {
+ font-family: Helvetica,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,sans-serif;
+ font-weight: normal;
+}
+footer h3.widgettitle {
+ font-style: normal;
+}
+.blog-post .date {
+ font-style: normal;
+ line-height: 14px;
+}
+.tribe-events-event-meta address.tribe-events-address, .tribe-events-list .tribe-events-venue-details {
+ font-style: normal;
+ font-weight: 400;
+}
+#tribe-geo-results h2.tribe-events-page-title, h2.tribe-events-page-title {
+ font-size: 30px;
+ font-weight: 400;
+}
+.tribe-events-list-separator-month {
+ font-weight: 400;
+}
+/*********************************************************
+2015.9.23
+*********************************************************/
+.content{ padding:30px 0; }
+.content_breadcrumbs { padding:20px 0 0 0; }
+.container_breadcrumbs { }
+.breadcrumbs {margin-bottom:20px;}
+/*********************************************************
+Sidebar News
+*********************************************************/
+section#secondary aside#sp_news_widget-3.widget.SP_News_Widget h4.widget-title {
+ font-size: 24px;
+ border-bottom: 3px solid #dbd8d2;
+ padding-bottom:10px;
+}
+section#secondary aside#sp_news_widget-3.widget.SP_News_Widget div.recent-news-items.no_p ul li.news_li h6 {
+ margin:0 0 5px 0;
+ font-size: 100%;
+ line-height: 1;
+}
+section#secondary aside#sp_news_widget-3.widget.SP_News_Widget div.recent-news-items.no_p ul li.news_li h6 a{
+ color: #656565;
+}
+section#secondary aside#sp_news_widget-3.widget.SP_News_Widget div.recent-news-items.no_p ul li.news_li h6 a:hover{
+ color: #e76c46;
+}
+/*********************************************************
+Contact Tab
+*********************************************************/
+.ui-widget-content {
+ border: none;
+ background: #f4f3ee;
+}
+#tabs-1 p a, #tabs-2 p a, #tabs-3 p a {
+ color:#e76c46;
+}
+.ui-widget-header {
+ background:#5a5a5a;
+ border:0;
+ padding:0;
+ margin:0;
+ height:auto;
+ font-size: 15px;
+}
+.ui-tabs .ui-tabs-nav {
+ padding:0; 
+ margin:0;
+}
+.ui-tabs {
+ padding:0; 
+ margin:0; 
+}
+.ui-helper-reset {
+ line-height:33px; 
+}
+.ui-tabs .ui-tabs-nav .ui-tabs-anchor {
+ padding: 0.5em 1em;
+}
+.ui-state-active,
+.ui-widget-content .ui-state-active,
+.ui-widget-header .ui-state-active {
+ border:none;
+ background:#e76c46;
+ font-weight: normal;
+ color: #ffffff;
+}
+#tabs {
+ margin-top:55px; 
+}
+#tabs ul li {
+ margin:0;
+ padding:0; 
+ border:none;
+ border:0;
+}
+@media (max-width:950px) {
+ .ui-state-default, .ui-corner-top {
+ float:none;
+ width:100%; 
+ }
+}
+/*********************************************************
+Contact Form
+*********************************************************/
+.contactform_left {
+ position:relative;
+ float:none;
+ width:100%; 
+}
+.contactform_right {
+ position:relative;
+ width:100%; 
+}
+.contactform_wrap {
+ padding:25px 0 10px 0;
+ height:auto;
+}
+@media (min-width:850px) {
+ .contactform_left {
+ float:left;
+ width: 48%;
+ margin-right:1%;
+ }
+ .contactform_right {
+ float:left;
+ width: 49%;
+ }
+}
+.contactform_right textarea {
+ height:156px; 
+}
+.contactform_right input[type="submit"], .contactform_right input[type="dt-sc-button"], .contactform_right input.dt-sc-button {
+ float:left; 
+ width:100%;
+}
+input[type="text"], input[type="password"], input[type="email"], input[type="url"], input[type="tel"], input[type="number"], input[type="range"], input[type="date"], textarea, input.text {
+ width:90%;
+}
+/*********************************************************
+2018.6.13　神楽坂サイトカラー全体変更
+*********************************************************/
+/*ヘッダー*/
+#header-wrapper {
+ background: #000;
+}
+#menu-main-menu li a:hover, #main-menu #menu-main-menu > li.current_page_item > a, #main-menu > ul > li.current-menu-item > a,#main-menu #menu-main-menu > li.current-menu-ancestor > a {
+ color: #ffd346;
+}
+/*コンテンツ一括*/
+.blog-post .post-content .entry-thumb .featured-post, .tagcloud a:hover, .product-thumb .featured, span.featured-product, .theme-btn, input[type="submit"], .products .product-details a.button, .single_add_to_cart_button, .shipping-calculator-form .button, .add_to_wishlist, .dt-sc-toggle-frame h5.dt-sc-toggle-accordion.active, .dt-sc-toggle-frame h5.dt-sc-toggle.active, ul.dt-sc-tabs-frame li a.current, ul.dt-sc-tabs-vertical-frame li a.current, .woocommerce-tabs ul.tabs li.active a, .summary.entry-summary .yith-wcwl-wishlistexistsbrowse.show, .summary.entry-summary .yith-wcwl-wishlistaddedbrowse.show, .bx-controls-direction a, .dt-sc-button, .widget.woocommerce ul li span.amount, .price_slider_amount button, .summary .price span.amount, .tribe-events-list .tribe-events-event-cost span, .tribe-events-cost, .woocommerce .shop_table.cart th, .product .summary .quantity input[type="button"], .product-quantity .quantity input[type="button"], .tribe-events-button, .tribe-events-sub-nav a, .tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"], .tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"] > a, #tribe-bar-form .tribe-bar-submit input[type="submit"], .tribe-events-nav-next a, .tribe-events-nav-previous a, .tribe-grid-allday .hentry.vevent > div:hover, .tribe-grid-body div[id*="tribe-events-event-"] .hentry.vevent:hover, .datepicker thead tr:first-child th:hover, .datepicker.dropdown-menu td.active.active, #tribe-events-content .tribe-events-tooltip h4, .single-tribe_events a.tribe-events-ical, .single-tribe_events a.tribe-events-ical:hover, .single-tribe_events a.tribe-events-gcal, .single-tribe_events a.tribe-events-gcal:hover, .woocommerce table.cart a.remove, .woocommerce-page table.cart a.remove, .woocommerce #content table.cart a.remove, .woocommerce-page #content table.cart a.remove, .dt-sc-social-icons .fa, .wc-proceed-to-checkout .checkout-button, .tribe-grid-header .tribe-grid-content-wrap .column.tribe-week-today,.dt-sc-button.red {
+ background: #ffd346;
+color:#000;
+}
+/*ページボタン*/
+.widget_categories ul li:hover a span, .pagination-wrapper .pagination li.active-page, #footer .widget_categories ul li:hover a span, .tagcloud a:hover {
+ background: #ffd346;
+ color: #000;
+}
+.pagination-wrapper .pagination li.active-page {
+ border: 1px solid #ffd346;
+}
+/*リンク*/
+a, .post-meta ul li a:hover, .breadcrumb span.fa, #menu-main-menu li ul li a:hover, #menu-main-menu li.current_page_item ul li a:hover, #menu-main-menu > li.current-menu-ancestor > a:hover, #menu-main-menu > li.current-menu-ancestor li.current_page_ancestor li a:hover, #menu-main-menu > li.current-menu-ancestor li.current-menu-item li a:hover, #menu-main-menu > li.current-menu-ancestor li.current_page_item a, #menu-main-menu > li.current-menu-ancestor li.current_page_ancestor a, #menu-main-menu > li.current-menu-ancestor li.current-menu-item a, #menu-main-menu > li.current-menu-ancestor li.current-menu-ancestor li.current-menu-item a, .breadcrumb a, .breadcrumb-wrapper h1, #secondary .widget ul li:hover:before, .widget_categories ul li:hover a, #footer ul.social-media li:hover a.fa, .dt-custom-service h3, .pagination-wrapper .pagination li:hover a, ul.commentlist li .author-name a, #respond h3#reply-title small a, .widget_archive ul li a:hover, footer .widget_archive ul li:hover:before, footer .widget_meta li:hover:before, footer .widget_recent_entries li:hover:before, .widget_pages li a:hover:before, footer .widget_nav_menu li a:hover:before, #footer ul li a:hover, #footer ul li h6 a, #footer .widget_tag_cloud a:hover, #secondary .widget ul li a:hover:before, #secondary .widget ul li a:hover, #secondary .widget ul li h6 a, .dt-service:hover .fa, h3.tribe-events-month-event-title a, footer h2 a, footer h4 a, .star-rating span:before, .star-rating:before, .woocommerce-page .star-rating:before, ul.dt-sc-tabs li a.current {
+color: #003c73;
+}
+/*墨色変更*/
+ul.dt-sc-tabs-frame li a, ul.dt-sc-tabs-vertical-frame li a, ul.dt-sc-tabs-frame, .woocommerce-tabs ul.tabs, .post-icon-format, .post-meta, .dt-sc-toggle-frame h5.dt-sc-toggle-accordion, .dt-sc-toggle-frame h5.dt-sc-toggle {
+ background: #000;
+}
+div.wn-head {
+ background: #000 !important;
+}
+/*背景*/
+.content {
+ padding: 30px 0;
+ background: #fff;
+}
+/*ブログ部背景*/
+.blog-post .post-content {
+ background: #fff;
+ border: 1px silver solid;
+ box-sizing: border-box;
+}
+/*コンテンツ背景・枠*/
+.dt-sc-tabs-container {
+ border: 1px silver solid;
+ box-sizing: border-box;
+ background: #fff;
+}
+.dt-sc-tabs-frame-content, .dt-sc-tabs-vertical-frame-content, .woocommerce-tabs .panel {
+ background: #fff;
+}
+/*おすすめ商品枠*/
+.products .product .product-wrapper {
+ background: none repeat scroll 0 0 #fff;
+ overflow: hidden;
+ position: relative;
+ border: 1px silver solid;
+ box-sizing: border-box;
+}
+/*催事ご案内枠*/
+#primary .dt-sc-one-third {
+ width: 31.5%;
+ border: 1px silver solid;
+}
+/*フッター*/
+#footer {
+ border-color: #473c35;
+ background: #000;
+}
+/*フッターメニュー*/
+.footer-info, footer input[type="text"], footer input[type="email"] {
+ background: #ffd346;
+}
+/*フッターメニュー文字*/
+#footer .footer-links li a, .footer-info, #footer p.copyright, #footer p.copyright a {
+ color: #000;
+}
+/*フッタータイトル*/
+ #footer span{
+ color: #ffd346;
+}
+/*フッタータイトル以外*/
+#footer span.date-start,
+#footer span.date-end,
+#footer span.post-date,
+#footer span.product-title,
+#footer ul li a
+{color:#dadada;}
+/*フッター横マーク消去*/
+.widget_recent_entries li a:before {
+ content: none;
+}
+/*フッター値段*/
+#footer span.amount {
+ color: #000;
+}
+/*フッタータイトル下線*/
+footer h3.widgettitle {
+ border: none;
+ margin-bottom: 0px;
+}
+/*最新ニュース背景*/
+div.whatsnew {
+ background:#f8f8f8;
+}
+/*最新ニュース文字*/
+.wn-article a {
+ color: #b2030a;
+}
+/*newマーク*/
+div.wn-item .wn-article .newmark {
+ color: #000;
+ background-color: #ffd346;
+}
+/*文字色*/
+h1, h2, h3, h4, h5, h6 {
+ color: #000;
+}
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p {
+ color: #5a5859;
+}
+.dt-sc-button.small, .products .product-details a.button.small {
+ color: #000;
+}
+/*商品ページ説明欄*/
+th {
+ background: #ffd346;
+ color: #000;
+ vertical-align: middle;
+ border-bottom: 0.1px solid #fff;
+}
+th span {
+ color: #000 !important;
+}
+.dt-sc-tabs-frame-content, .dt-sc-tabs-vertical-frame-content, .woocommerce-tabs .panel {
+ background: #fff;
+ border: 0.1px silver solid;
+}
+.summary.entry-summary .yith-wcwl-wishlistexistsbrowse.show .feedback, .summary.entry-summary .yith-wcwl-wishlistaddedbrowse.show .feedback {
+ color: #000;
+}
+/*イベント情報ボタン*/
+ul.tribe-events-sub-nav a,.dt-sc-button:hover, .tribe-events-button:hover, .tribe-events-sub-nav a:hover, .single_add_to_cart_button:hover, .add_to_wishlist:hover, button:hover, .button:hover, .dt-sc-social-icons .fa:hover, .wc-proceed-to-checkout .checkout-button:hover {
+ background-color:#ffd346;
+}
+ul.tribe-events-sub-nav a {
+ background-color: #ffd346;
+ color: #000;
+}
+/*問い合わせボタン*/
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+ border: none;
+ background: #ffd346;
+ font-weight: normal;
+ color: #000;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor, .ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor, .ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+ background: #ffd346;
+ color: #000;
+}
+.ui-tabs .ui-tabs-panel {
+ background: #fff;
+ border: 0.1px silver solid;
+}
+/*********************************************************
+2018.7.12　文字色修正
+*********************************************************/
+.company_list a ,.posted_in a,.breadcrumbs a{
+ color: #003c73;
+}
+#main-menu ul li.menu-item-simple-parent ul li a:hover {
+color: #003c73;
+}
+#footer ul li a:hover{
+ color: #ffd346;
+}  
+ jQuery(document).ready(function() {
+ // CUSTOM AJAX CONTENT LOADING FUNCTION
+ var ajaxRevslider = function(obj) {
+ // obj.type : Post Type
+ // obj.id : ID of Content to Load
+ // obj.aspectratio : The Aspect Ratio of the Container / Media
+ // obj.selector : The Container Selector where the Content of Ajax will be injected. It is done via the Essential Grid on Return of Content
+ var content = "";
+ data = {};
+ data.action = 'revslider_ajax_call_front';
+ data.client_action = 'get_slider_html';
+ data.token = 'd3feaf04e5';
+ data.type = obj.type;
+ data.id = obj.id;
+ data.aspectratio = obj.aspectratio;
+ // SYNC AJAX REQUEST
+ jQuery.ajax({
+ type:"post",
+ url:"/wp-admin/admin-ajax.php",
+ dataType: 'json',
+ data:data,
+ async:false,
+ success: function(ret, textStatus, XMLHttpRequest) {
+ if(ret.success == true)
+ content = ret.data; 
+ },
+ error: function(e) {
+ console.log(e);
+ }
+ });
+ // FIRST RETURN THE CONTENT WHEN IT IS LOADED !!
+ return content; 
+ };
+ // CUSTOM AJAX FUNCTION TO REMOVE THE SLIDER
+ var ajaxRemoveRevslider = function(obj) {
+ return jQuery(obj.selector+" .rev_slider").revkill();
+ };
+ // EXTEND THE AJAX CONTENT LOADING TYPES WITH TYPE AND FUNCTION
+ var extendessential = setInterval(function() {
+ if (jQuery.fn.tpessential != undefined) {
+ clearInterval(extendessential);
+ if(typeof(jQuery.fn.tpessential.defaults) !== 'undefined') {
+ jQuery.fn.tpessential.defaults.ajaxTypes.push({type:"revslider",func:ajaxRevslider,killfunc:ajaxRemoveRevslider,openAnimationSpeed:0.3}); 
+ // type: Name of the Post to load via Ajax into the Essential Grid Ajax Container
+ // func: the Function Name which is Called once the Item with the Post Type has been clicked
+ // killfunc: function to kill in case the Ajax Window going to be removed (before Remove function !
+ // openAnimationSpeed: how quick the Ajax Content window should be animated (default is 0.3)
+ }
+ }
+ },30);
+ });
+body.custom-background { background-color: #eeee22; }
+ お知らせ 
+ ニュース 
+ イベント 
+ 店舗情報 
+ 神楽坂五〇番 総本店 
+ エキュートエディション飯田橋店 
+ 商品一覧 
+ 調理方法 
+ 会社概要 
+ 会社概要 
+ 採用情報 
+ お問い合わせ 
+ お知らせ 
+ ニュース 
+ イベント 
+ 店舗情報 
+ 神楽坂五〇番 総本店 
+ エキュートエディション飯田橋店 
+ 商品一覧 
+ 調理方法 
+ 会社概要 
+ 会社概要 
+ 採用情報 
+ お問い合わせ 
+ /******************************************
+ - PREPARE PLACEHOLDER FOR SLIDER -
+ ******************************************/
+ var setREVStartSize = function() {
+ var tpopt = new Object();
+ tpopt.startwidth = 2000;
+ tpopt.startheight = 917;
+ tpopt.container = jQuery('#rev_slider_1_1');
+ tpopt.fullScreen = "off";
+ tpopt.forceFullWidth="off";
+ tpopt.container.closest(".rev_slider_wrapper").css({height:tpopt.container.height()});tpopt.width=parseInt(tpopt.container.width(),0);tpopt.height=parseInt(tpopt.container.height(),0);tpopt.bw=tpopt.width/tpopt.startwidth;tpopt.bh=tpopt.height/tpopt.startheight;if(tpopt.bh>tpopt.bw)tpopt.bh=tpopt.bw;if(tpopt.bh 1){tpopt.bw=1;tpopt.bh=1}if(tpopt.bw>1){tpopt.bw=1;tpopt.bh=1}tpopt.height=Math.round(tpopt.startheight*(tpopt.width/tpopt.startwidth));if(tpopt.height>tpopt.startheight&&tpopt.autoHeight!="on")tpopt.height=tpopt.startheight;if(tpopt.fullScreen=="on"){tpopt.height=tpopt.bw*tpopt.startheight;var cow=tpopt.container.parent().width();var coh=jQuery(window).height();if(tpopt.fullScreenOffsetContainer!=undefined){try{var offcontainers=tpopt.fullScreenOffsetContainer.split(",");jQuery.each(offcontainers,function(e,t){coh=coh-jQuery(t).outerHeight(true);if(coh 
+ -->
+ 私たちは 
+ 創業当初の想いを 
+ 忘れることなく、 
+ 先代より伝わる伝統の技を 
+ 守り続けます。 
+ 溢れんばかりの肉汁を 
+ しっかりと包み込むため 
+ 職人の手により 
+ ひとつひとつ丁寧に作られた 
+ 手包みの中華まん。 
+ ぜひお召し上がりください。 
+ 国産豚肉などの厳選素材を使い 
+ 伝統の技で手作りされる 
+ こだわりの中華まん・点心。 
+ 添加物や保存料に頼らない 
+ 江戸中華ならではの 
+ 安心と安全を皆様の食卓に。 
+ 神楽坂五〇番総本店 名前の由来 
+ 株式会社神楽坂五十番 は、2023年5月10日に 
+ 株式会社神楽坂五○番 に社名変更いたしました。
+ 五 ― ご 
+ 〇 ― えん
+ 五円玉をイメージしています。 
+ 五円玉は古くから「ご縁」の象徴です。
+ そして、〇（日の丸）は平和の象徴でもあり、 
+ この丸い穴から将来を見渡す 神楽坂五〇番のビジョンを表しています。 
+ 黄金色のロゴマークの色は、神楽坂の象徴の1つ 
+ 創建400年を超える毘沙門天・善國寺の狛虎を イメージしました。 
+ これまでも、これからも、神楽坂五〇番は 
+ 日本の豊かな実りをおいしい肉まんや点心として お届けし、 
+ 皆さまと温かなご縁を結ぶ 企業でありたいと考えています。
+ 皆様の食卓はもちろん、 
+ ちょっとした手みやげや贈答用としても 
+ 人気の肉まんのほかにも各種中華まんから焼売・餃子などの点心まで 
+ 安心・安全を目指した商品を幅広く提供しております。 
+ Add to Wishlist 
+ Product added! 
+ Browse Wishlist 
+ The product is already in the wishlist! 
+ Browse Wishlist 
+ 肉まん 
+ 460 円 
+ Add to Wishlist 
+ Product added! 
+ Browse Wishlist 
+ The product is already in the wishlist! 
+ Browse Wishlist 
+ 中肉まん 
+ 360 円 
+ Add to Wishlist 
+ Product added! 
+ Browse Wishlist 
+ The product is already in the wishlist! 
+ Browse Wishlist 
+ 五目まん 
+ 560 円 
+ 商品一覧 
+ オンラインストア 
+ ニュース 
+ 2023.01.13 鹿児島工場　本年の稼働を始めました！ あけましておめでとうございます。 本年もよろしくお願いいたします。 本年の製造を1月5日より開始いたしました。 今年もおいしい肉まんをお届けいたします。 2023.01.05 鹿児島工場が「食肉通信(R4/10/25)」に掲載 新年　あけましておめでとうございます。 今年もどうぞよろしくお願い申し上げます。 令和4年4月15日に、現在の鹿児島工場が稼働を開始して、早くも８か月が経過いたしましました。 地元での注目度も高く、弊社の取 2022.12.31 神楽坂五十番総本店から 健康志向の新ブランド「東京肉まん」が誕生 「日本の極旨味」「新たな東京名物」をコンセプトに、「和」をテーマとした新感覚のヘルシーな肉まんの新シリーズ「東京肉まん」の販売を開始しました。茄子や山椒、昆布、鰹節、柚子胡椒などの和食材に焙煎大豆の大豆ミート、グルテンフ 2021.04.16 ネット限定 母の日ギフトセット販売中 5月9日は母の日 神楽坂五十番では母の日限定ギフトセットを販売しています&#x1f49b; 何を送ろうか、迷っている方、今年は少し趣向を変えて、神楽坂五十番の肉まんと点心の詰め合わせはいかがでしょう？ インターネットで期 Page 1 of 12 1 2 3 4 5 6 7 8 9 10 11 12 
+ ニュース一覧 
+ We Serve 
+[dt_sc_tabs_horizontal]
+[dt_sc_tab title="Club Meeting"]
+ All you need is to fill out this form 
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit. Nam imperdiet imperdiet magna, faucibus ultrices tortor viverra congue.
+[/dt_sc_tab]
+[dt_sc_tab title="Wedding Orders"]
+ Aliquam non pretium massa 
+Aliquam euismod feugiat est, congue elementum justo condimentum sit amet. Nullam vitae risus ut velit condimentum egestas vitae eget enim. Vivamus cursus, sem sed tristique posuere, libero tellus dictum nisl, nec rhoncus odio odio et orci. Ut placerat aliquam elit, id egestas sem. Sed tristique eu libero et malesuada. Pellentesque non pharetra dui. Aliquam vel augue eu augue ornare ullamcorper.
+[dt_sc_fancy_ul style="arrow"]
+ Vivamus cursus, sem sed tristique posuere, libero tellus dictum nisl, nec rhoncus odio odio et orc 
+ Ut placerat aliquam elit, id egestas sem. Sed tristique eu libero et malesuada Pellentesque non. 
+ Fusce sed lorem at orci pretium viverra ut sit amet nunc. Aliquam euismod feugiat est 
+[/dt_sc_fancy_ul]
+[/dt_sc_tab]
+[dt_sc_tab title="Birthday Specials"]
+ Nulla aliquet sed nunc vitae 
+Nunc euismod nibh sit amet justo porta, at blandit metus bibendum. Nunc pharetra justo sed nulla imperdiet, quis adipiscing turpis bibendum. Nulla venenatis vehicula augue. Praesent vulputate ipsum vel consectetur tincidunt. Aliquam egestas, velit malesuada sagittis iaculis, tortor erat vestibulum velit, eu malesuada metus lorem a metus.
+Ut suscipit, lorem quis bibendum placerat, sem arcu rutrum arcu, non consequat dolor ligula quis urna. Ut lectus nisi, commodo id aliquam ac, posuere in lacus. Integer a nisl sapien.
+[/dt_sc_tab]
+[dt_sc_tab title="Parties"]
+ Pellentesque habitant morbi tristique 
+Consectetur adipiscing elit. Morbi euismod diam eu arcu volutpat ut adipiscing sem auctor. Vivamus adipiscing lobortis sagittis. Nullam tempus mauris dolor, ac malesuada arcu.
+Nunc euismod nibh sit amet justo porta, at blandit metus bibendum. Nunc pharetra justo sed nulla imperdiet, quis adipiscing turpis bibendum. Nulla venenatis vehicula augue. Praesent vulputate ipsum vel consectetur tincidunt. Aliquam egestas, velit malesuada sagittis iaculis, tortor erat vestibulum velit, eu malesuada metus lorem a metus.
+[/dt_sc_tab]
+[/dt_sc_tabs_horizontal]
+--> 
+ イベント 
+ 現時点では今後のイベントがありません。 
+ イベント一覧 
+ Twitter 
+ Twitterフォロー 
+ Tweets by kagurazaka50 
+ Sushi - A Restaurant Theme 
+--> 
+ 最近の記事 
+ 鹿児島工場　本年の稼働を始めました！ 
+ 2023年1月13日 
+ 鹿児島工場が「食肉通信(R4/10/25)」に掲載 
+ 2023年1月5日 
+ 神楽坂五十番総本店から 健康志向の新ブランド「東京肉まん」が誕生 
+ 2022年12月31日 
+ ネット限定 母の日ギフトセット販売中 
+ 2021年4月16日 
+ インターネットで購入できます 
+ 2020年6月26日 
+ 神楽坂五十番@twitter @kagurazaka50さんのツイート 
+ 会社概要 
+ 採用情報 
+ お問い合わせ 
+ プライバシーポリシー 
+ &copy;KAGURAZAKA GOJUBAN Co., Ltd. 
+ var mytheme_urls = {
+ theme_base_url:'/wp-content/themes/sushi_prod/'
+ ,framework_base_url:'/wp-content/themes/sushi_prod/framework/'
+ ,ajaxurl:'/wp-admin/admin-ajax.php'
+ ,url:'https://www.50ban.jp'
+ ,stickynav:'disable'
+ ,scroll:'enable'
+ };
+ Product Inquiry 
+ &times; 
+ Name 
+ Email 
+ * 
+ Phone 
+ Subject 
+ Message 
+ The information you enter here will be sent directly to the recipient. It is not stored on this sites database. Read more in our Privacy Policy 
+ I have read and agree to the website terms and conditions 
+ SEND 
+ ( function ( body ) {
+ 'use strict';
+ body.className = body.className.replace( /\btribe-no-js\b/, 'tribe-js' );
+ } )( document.body );
+ var c = document.body.className;
+ c = c.replace(/woocommerce-no-js/, 'woocommerce-js');
+ document.body.className = c;
+/* */
+/* */
+/* */
+/* \u5546\u54c1\u304c\u6b63\u3057\u304f\u30ab\u30fc\u30c8\u306b\u8ffd\u52a0\u3055\u308c\u307e\u3057\u305f "},"actions":{"add_to_wishlist_action":"add_to_wishlist","remove_from_wishlist_action":"remove_from_wishlist","move_to_another_wishlist_action":"move_to_another_wishlsit","reload_wishlist_and_adding_elem_action":"reload_wishlist_and_adding_elem"}};
+/* ]]> */
+ jQuery.noConflict();
+ (function( $ ) {
+ $(function() {
+ // More code using $ as alias to jQuery
+ $("area[href*=#],a[href*=#]:not([href=#]):not([href^='#tab']):not([href^='#quicktab']):not([href^='#pane'])").click(function() {
+ if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+ var target = $(this.hash);
+ target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+ if (target.length) {
+ $('html,body').animate({
+ scrollTop: target.offset().top - 30 
+ },1000 ,'easeInQuint');
+ return false;
+ }
+ }
+ });
+ });
+ })(jQuery);
