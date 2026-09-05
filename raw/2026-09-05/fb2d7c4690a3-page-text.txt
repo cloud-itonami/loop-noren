@@ -1,0 +1,737 @@
+ぐるなび - レストラン・宴会予約 グルメ情報サイト 
+ {
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "name": "ぐるなび",
+ "url": "https://www.gnavi.co.jp/",
+ "potentialAction": {
+ "@type": "SearchAction",
+ "target": "http://r.gnavi.co.jp/area/jp/rs/?viagssb=t&fw={search_term}",
+ "query-input": "required name=search_term"
+ }
+ }
+ {
+ "@context": "https://schema.org",
+ "@type": "WebPage",
+ "url": "https://www.gnavi.co.jp/",
+ "name": "ぐるなび - レストラン・宴会予約 グルメ情報サイト",
+ "headline": "ぐるなび - レストラン・宴会予約 グルメ情報サイト",
+ "description": "レストラン予約サイト【ぐるなび】なら、ネット予約で楽天ポイントが貯まる！エリア、駅名、予算などの条件から希望のお店をスピーディに検索、予約ができます。お得なクーポン情報や最新レストラン情報も満載なので、歓送迎会・宴会のお店探しにもオススメ！"
+ }
+ gn-footer {
+ background-color: #fff;
+ box-shadow: inset 0 1px 0 #e5e5e5;
+ box-sizing: border-box;
+ display: block;
+ min-width: 320px;
+ padding: 0 0 16px
+ }
+ gn-footer .gn-footer-copyright {
+ font-feature-settings: "palt";
+ color: #333;
+ font-family: YakuHanJP, Helvetica Neue, Arial, Hiragino Kaku Gothic ProN, Hiragino Sans, Meiryo, sans-serif;
+ font-size: 10px;
+ line-height: 1;
+ margin: 0;
+ padding-top: 24px;
+ text-align: center
+ }
+ gn-footer .gn-footer-copyright small {
+ font-size: 10px
+ }
+ gn-footer[device=pc] {
+ min-width: 960px;
+ padding: 0 0 32px
+ }
+ @media screen and (min-width:769px) {
+ gn-footer {
+ min-width: 960px;
+ padding: 0 0 32px
+ }
+ gn-footer[device=sp] {
+ padding: 16px 0
+ }
+ }
+ window.googletag = window.googletag || {
+ cmd: []
+ };
+ googletag.cmd.push(function() {
+ googletag.defineSlot('/7753536/gnavi_pc_top_01', [300, 250], 'div-gpt-ad-1606972405865-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_pc_top_02', [300, 250], 'div-gpt-ad-1606974060122-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_pc_top_03', [300, 250], 'div-gpt-ad-1606974159582-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_sp_top_01', [300, 250], 'div-gpt-ad-1606987238536-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_pc_top_theme_01', [300, 250], 'div-gpt-ad-1757635033873-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_pc_top_theme_02', [300, 250], 'div-gpt-ad-1757635183087-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_pc_top_theme_03', [300, 250], 'div-gpt-ad-1757635536690-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_sp_top_theme_01', [[1, 1],[300, 250], 'fluid'], 'div-gpt-ad-1757644645725-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_pc_top_theme_carousel_01', [[300, 100],[320, 50],[320, 100]], 'div-gpt-ad-1758070203624-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_pc_top_theme_carousel_02', [[300, 100],[320, 50],[320, 100]], 'div-gpt-ad-1758070364110-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_pc_top_theme_carousel_03', [[300, 100],[320, 50],[320, 100]], 'div-gpt-ad-1758070582240-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_pc_top_theme_carousel_04', [[300, 100],[320, 50],[320, 100]], 'div-gpt-ad-1758070793178-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_pc_top_theme_carousel_05', [[300, 100],[320, 50],[320, 100]], 'div-gpt-ad-1758070854185-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_pc_top_theme_carousel_06', [[300, 100],[320, 50],[320, 100]], 'div-gpt-ad-1758071581179-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_sp_top_theme_carousel_01', [[320, 50],[300, 100],[320, 100]], 'div-gpt-ad-1758071747444-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_sp_top_theme_carousel_02', [[320, 50],[320, 100],[300, 100]], 'div-gpt-ad-1758071821452-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_sp_top_theme_carousel_03', [[320, 50],[300, 100],[320, 100]], 'div-gpt-ad-1758071874640-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_sp_top_theme_carousel_04', [[300, 100],[320, 50],[320, 100]], 'div-gpt-ad-1758072324321-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_sp_top_theme_carousel_05', [[320, 50],[320, 100],[300, 100]], 'div-gpt-ad-1758072372166-0').addService(googletag.pubads());
+ googletag.defineSlot('/7753536/gnavi_sp_top_theme_carousel_06', [[320, 50],[320, 100],[300, 100]], 'div-gpt-ad-1758072424097-0').addService(googletag.pubads());
+ googletag.pubads().setCentering(true);
+ googletag.pubads().enableSingleRequest();
+ googletag.pubads().collapseEmptyDivs();
+ googletag.enableServices();
+ });
+ 予約履歴 
+ ログイン 
+ 新宿 
+ 銀座 
+ 池袋 
+ 梅田・大阪駅 
+ 名駅 
+ 仙台 
+ 検索履歴 
+ ランチ 
+ 居酒屋 
+ 検索履歴 
+ 0:00 
+ 0:30 
+ 1:00 
+ 1:30 
+ 2:00 
+ 2:30 
+ 3:00 
+ 3:30 
+ 4:00 
+ 4:30 
+ 5:00 
+ 5:30 
+ 6:00 
+ 6:30 
+ 7:00 
+ 7:30 
+ 8:00 
+ 8:30 
+ 9:00 
+ 9:30 
+ 10:00 
+ 10:30 
+ 11:00 
+ 11:30 
+ 12:00 
+ 12:30 
+ 13:00 
+ 13:30 
+ 14:00 
+ 14:30 
+ 15:00 
+ 15:30 
+ 16:00 
+ 16:30 
+ 17:00 
+ 17:30 
+ 18:00 
+ 18:30 
+ 19:00 
+ 19:30 
+ 20:00 
+ 20:30 
+ 21:00 
+ 21:30 
+ 22:00 
+ 22:30 
+ 23:00 
+ 23:30 
+ 1名 
+ 2名 
+ 3名 
+ 4名 
+ 5名 
+ 6名 
+ 7名 
+ 8名 
+ 9名 
+ 10名 
+ 11名 
+ 12名 
+ 13名 
+ 14名 
+ 15名 
+ 16名 
+ 17名 
+ 18名 
+ 19名 
+ 20名 
+ 21名 
+ 22名 
+ 23名 
+ 24名 
+ 25名 
+ 26名 
+ 27名 
+ 28名 
+ 29名 
+ 30名 
+ 31名 
+ 32名 
+ 33名 
+ 34名 
+ 35名 
+ 36名 
+ 37名 
+ 38名 
+ 39名 
+ 40名 
+ 41名 
+ 42名 
+ 43名 
+ 44名 
+ 45名 
+ 46名 
+ 47名 
+ 48名 
+ 49名 
+ 50名 
+ 51名 
+ 52名 
+ 53名 
+ 54名 
+ 55名 
+ 56名 
+ 57名 
+ 58名 
+ 59名 
+ 60名 
+ 61名 
+ 62名 
+ 63名 
+ 64名 
+ 65名 
+ 66名 
+ 67名 
+ 68名 
+ 69名 
+ 70名 
+ 71名 
+ 72名 
+ 73名 
+ 74名 
+ 75名 
+ 76名 
+ 77名 
+ 78名 
+ 79名 
+ 80名 
+ 81名 
+ 82名 
+ 83名 
+ 84名 
+ 85名 
+ 86名 
+ 87名 
+ 88名 
+ 89名 
+ 90名 
+ 91名 
+ 92名 
+ 93名 
+ 94名 
+ 95名 
+ 96名 
+ 97名 
+ 98名 
+ 99名 
+ 100名~ 
+ ポイント貯まる 
+ 個室 
+ 検索する 
+ 現在地周辺 
+ ランチ 
+ 居酒屋 
+ 日時を指定する 検索する 
+ 時間を選択 
+ 指定なし 
+ 0:00 
+ 0:30 
+ 1:00 
+ 1:30 
+ 2:00 
+ 2:30 
+ 3:00 
+ 3:30 
+ 4:00 
+ 4:30 
+ 5:00 
+ 5:30 
+ 6:00 
+ 6:30 
+ 7:00 
+ 7:30 
+ 8:00 
+ 8:30 
+ 9:00 
+ 9:30 
+ 10:00 
+ 10:30 
+ 11:00 
+ 11:30 
+ 12:00 
+ 12:30 
+ 13:00 
+ 13:30 
+ 14:00 
+ 14:30 
+ 15:00 
+ 15:30 
+ 16:00 
+ 16:30 
+ 17:00 
+ 17:30 
+ 18:00 
+ 18:30 
+ 19:00 
+ 19:30 
+ 20:00 
+ 20:30 
+ 21:00 
+ 21:30 
+ 22:00 
+ 22:30 
+ 23:00 
+ 23:30 
+ 人数を選択 
+ 指定なし 
+ 1名 
+ 2名 
+ 3名 
+ 4名 
+ 5名 
+ 6名 
+ 7名 
+ 8名 
+ 9名 
+ 10名 
+ 11名 
+ 12名 
+ 13名 
+ 14名 
+ 15名 
+ 16名 
+ 17名 
+ 18名 
+ 19名 
+ 20名 
+ 21名 
+ 22名 
+ 23名 
+ 24名 
+ 25名 
+ 26名 
+ 27名 
+ 28名 
+ 29名 
+ 30名 
+ 31名 
+ 32名 
+ 33名 
+ 34名 
+ 35名 
+ 36名 
+ 37名 
+ 38名 
+ 39名 
+ 40名 
+ 41名 
+ 42名 
+ 43名 
+ 44名 
+ 45名 
+ 46名 
+ 47名 
+ 48名 
+ 49名 
+ 50名 
+ 51名 
+ 52名 
+ 53名 
+ 54名 
+ 55名 
+ 56名 
+ 57名 
+ 58名 
+ 59名 
+ 60名 
+ 61名 
+ 62名 
+ 63名 
+ 64名 
+ 65名 
+ 66名 
+ 67名 
+ 68名 
+ 69名 
+ 70名 
+ 71名 
+ 72名 
+ 73名 
+ 74名 
+ 75名 
+ 76名 
+ 77名 
+ 78名 
+ 79名 
+ 80名 
+ 81名 
+ 82名 
+ 83名 
+ 84名 
+ 85名 
+ 86名 
+ 87名 
+ 88名 
+ 89名 
+ 90名 
+ 91名 
+ 92名 
+ 93名 
+ 94名 
+ 95名 
+ 96名 
+ 97名 
+ 98名 
+ 99名 
+ 100名~ 
+ 指定する 
+ 最近見たお店 
+ 予約したお店 
+ 楽天ポイント 貯まる！ 
+ ＼ 全国 30,000店以上 ！／ 
+ 対象店舗を見る 
+ googletag.cmd.push(function() {
+ googletag.display('div-gpt-ad-1606972405865-0');
+ });
+ googletag.cmd.push(function() {
+ googletag.display('div-gpt-ad-1606974060122-0');
+ });
+ googletag.cmd.push(function() {
+ googletag.display('div-gpt-ad-1606974159582-0');
+ });
+ googletag.cmd.push(function() {
+ googletag.display('div-gpt-ad-1606987238536-0');
+ });
+ エリアから探す 
+ 東京 
+ 神奈川 
+ 大阪 
+ 愛知 
+ 京都 
+ 福岡 
+ 現在地周辺から探す 
+ 新宿 
+ 横浜駅 
+ 池袋 
+ 新橋 
+ 東京駅（八重洲） 
+ 人気のエリア 
+ 銀座 
+ 有楽町・日比谷 
+ 渋谷 
+ 上野 
+ 神田 
+ 秋葉原 
+ 品川 
+ 立川 
+ 川崎 
+ 新横浜 
+ 大宮 
+ 名駅 
+ 京都駅 
+ 梅田駅・大阪駅周辺 
+ なんば（難波） 
+ 天王寺・阿倍野 
+ （大阪）京橋 
+ 三宮 
+ 札幌すすきの 
+ 仙台 
+ 広島市 
+ 博多 
+ 那覇 
+ 都道府県から探す 
+ 北海道 
+ 青森県 
+ 岩手県 
+ 宮城県 
+ 秋田県 
+ 山形県 
+ 福島県 
+ 茨城県 
+ 栃木県 
+ 群馬県 
+ 埼玉県 
+ 千葉県 
+ 東京都 
+ 神奈川県 
+ 新潟県 
+ 富山県 
+ 石川県 
+ 福井県 
+ 山梨県 
+ 長野県 
+ 岐阜県 
+ 静岡県 
+ 愛知県 
+ 三重県 
+ 滋賀県 
+ 京都府 
+ 大阪府 
+ 兵庫県 
+ 奈良県 
+ 和歌山県 
+ 鳥取県 
+ 島根県 
+ 岡山県 
+ 広島県 
+ 山口県 
+ 徳島県 
+ 香川県 
+ 愛媛県 
+ 高知県 
+ 福岡県 
+ 佐賀県 
+ 長崎県 
+ 熊本県 
+ 大分県 
+ 宮崎県 
+ 鹿児島県 
+ 沖縄県 
+ 人気の駅 
+ 東京駅 
+ 横浜駅 
+ 新橋駅 
+ 新宿駅 
+ 名古屋駅 
+ 品川駅 
+ 博多駅 
+ 仙台駅 
+ 大宮駅 
+ 京都駅 
+ 川崎駅 
+ 梅田駅 
+ なんば駅 
+ 日本橋駅 
+ みなとみらい駅 
+ もっと見る 
+ 料理ジャンルから探す 
+ 居酒屋 
+ 飲み会・歓迎会・送別会はもちろん！女子会やデート、合コン、接待にも 
+ 焼肉 
+ 焼肉好き必見！コスパ抜群のカジュアル派から本格派の名店まで！ 
+ イタリアン 
+ ピザやパスタ、コース料理などバラエティ豊かなイタリアン！ 
+ 焼き鳥 
+ バイキング 
+ 和食 
+ ビアガーデン 
+ 中華 
+ 鉄板焼 
+ しゃぶしゃぶ 
+ 寿司 
+ 宴会・カラオケ 
+ 海鮮・魚介 
+ 鍋 
+ バー・バル 
+ 韓国料理 
+ もつ鍋 
+ ジンギスカン 
+ もんじゃ焼き 
+ 牛タン 
+ ステーキ 
+ かに料理 
+ カフェ・スイーツ 
+ うなぎ 
+ 水炊き 
+ 焼肉・ホルモン・鉄板焼 
+ フレンチ 
+ カレー 
+ 洋食・西洋料理 
+ アジア・エスニック 
+ ファミレス・ファーストフード 
+ 人気エリア×ジャンル 
+ 新宿×居酒屋 
+ 横浜駅×居酒屋 
+ 仙台×居酒屋 
+ なんば（難波）×居酒屋 
+ 池袋×居酒屋 
+ 名駅×居酒屋 
+ 東京駅（八重洲）×居酒屋 
+ 大宮×居酒屋 
+ 新橋×居酒屋 
+ 上野×居酒屋 
+ 梅田駅・大阪駅周辺×居酒屋 
+ 品川×居酒屋 
+ 有楽町・日比谷×居酒屋 
+ 新宿×焼肉 
+ 横浜駅×焼肉 
+ 仙台×焼肉 
+ なんば（難波）×焼肉 
+ 池袋×焼肉 
+ 名駅×焼肉 
+ 大宮×焼肉 
+ 新橋×焼肉 
+ 上野×焼肉 
+ 渋谷×焼肉 
+ 川崎×焼肉 
+ 梅田駅・大阪駅周辺×焼肉 
+ もっと見る 
+ 条件・こだわりから探す 
+ 個室 
+ 宴会や女子会、デートにも！周りを気にせずお酒や会話を楽しめるからいつも以上に盛り上がる！ 
+ 食べ放題 
+ 焼肉食べ放題やビュッフェ・バイキングで大満足！ 
+ 大人数で宴会 
+ みんなでわいわい！大人数の宴会OKのお店 
+ 昼飲み・昼宴会 
+ 飲み放題 
+ 喫煙可 
+ 3時間以上の宴会・パーティー 
+ 貸切OK 
+ 座敷席 
+ 子連れOK 
+ 駐車場有 
+ 女子会におすすめ 
+ 接待に使える 
+ デートにおすすめ 
+ 誕生日特典あり 
+ 二次会におすすめ 
+ 記念日におすすめ 
+ 夜景が見える 
+ 日曜営業 
+ カップルシート 
+ 一人でも入りやすい 
+ 3000円以下の飲み放題 
+ 4000円以下の飲み放題 
+ 5000円以下の飲み放題 
+ 人気エリア×条件・こだわり 
+ 新宿×個室 
+ 横浜駅×個室 
+ 仙台×個室 
+ なんば（難波）×個室 
+ 池袋×個室 
+ 名駅×個室 
+ 東京駅（八重洲）×個室 
+ 大宮×個室 
+ 新橋×個室 
+ 博多×個室 
+ 上野×個室 
+ 梅田駅・大阪駅周辺×個室 
+ 新宿×飲み放題 
+ 仙台×飲み放題 
+ 池袋×飲み放題 
+ 東京駅（八重洲）×飲み放題 
+ 大宮×飲み放題 
+ 新橋×飲み放題 
+ 上野×飲み放題 
+ 渋谷×飲み放題 
+ 梅田駅・大阪駅周辺×飲み放題 
+ 札幌駅×飲み放題 
+ 品川×飲み放題 
+ 新横浜×飲み放題 
+ 有楽町・日比谷×飲み放題 
+ 浜松町・大門×飲み放題 
+ 赤坂×飲み放題 
+ 桜木町×飲み放題 
+ もっと見る 
+ トレンドグルメ 
+ ハンバーガー 
+ ビール 
+ うなぎ 
+ カフェ 
+ 韓国料理 
+ 唐揚げ 
+ おすすめ特集 
+ googletag.cmd.push(function() {
+ googletag.display('div-gpt-ad-1757635033873-0');
+ });
+ googletag.cmd.push(function() {
+ googletag.display('div-gpt-ad-1757635183087-0');
+ });
+ googletag.cmd.push(function() {
+ googletag.display('div-gpt-ad-1757635536690-0');
+ });
+ googletag.cmd.push(function() {
+ googletag.display('div-gpt-ad-1757644645725-0');
+ });
+ 旅行・観光におすすめ 
+ ご当地グルメ・ランキング・記事やお土産情報も！ 
+ ぐるなびの関連サービス 
+ 大人のレストランガイド 
+ 普段使いから接待まで、幅広いビジネスシーンに便利 
+ こちら秘書室 
+ 接待、会食などのビジネスシーンのご利用に 
+ PREMIUM GOURMET CLUB 
+ 全国の様々な“おいしい”が体験できる会員制サービス 
+ キャンペーン・お知らせ 
+ 楽天ぐるなびアプリで 毎日お得に！ 
+ ネット予約で楽天ポイントがザクザク貯まる。 
+ 今すぐアプリを無料ダウンロード！ 
+ 楽天ぐるなびアプリで毎日お得に！ 
+ ネット予約で楽天ポイントがザクザク貯まる。 
+ トップページに関するアンケート 
+ 楽天ぐるなび都道府県 
+ 北海道 
+ 青森県 
+ 岩手県 
+ 宮城県 
+ 秋田県 
+ 山形県 
+ 福島県 
+ 茨城県 
+ 栃木県 
+ 群馬県 
+ 埼玉県 
+ 千葉県 
+ 東京都 
+ 神奈川県 
+ 新潟県 
+ 富山県 
+ 石川県 
+ 福井県 
+ 山梨県 
+ 長野県 
+ 岐阜県 
+ 静岡県 
+ 愛知県 
+ 三重県 
+ 滋賀県 
+ 京都府 
+ 大阪府 
+ 兵庫県 
+ 奈良県 
+ 和歌山県 
+ 鳥取県 
+ 島根県 
+ 岡山県 
+ 広島県 
+ 山口県 
+ 徳島県 
+ 香川県 
+ 愛媛県 
+ 高知県 
+ 福岡県 
+ 佐賀県 
+ 長崎県 
+ 熊本県 
+ 大分県 
+ 宮崎県 
+ 鹿児島県 
+ 沖縄県 
+ © Gurunavi, Inc. 
+ var homeBaseData = {
+ "sgtAPI": "https://cpnt.gnavi.co.jp/sgt/s/"
+ }
+ (function() {
+ var tagjs = document.createElement("script");
+ var s = document.getElementsByTagName("script")[0];
+ tagjs.async = true;
+ tagjs.src = "//s.yjtag.jp/tag.js#site=ugpOkqj";
+ s.parentNode.insertBefore(tagjs, s);
+ }());
