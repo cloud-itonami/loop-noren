@@ -11,7 +11,7 @@
   判定は 1 つも持たない —— 適格性も採点も処方も送信可否も `noren` にある。
   ここが持つのは順序と、1 周で何件やるかだけ（`manifest/repository-rules.edn`
   の `loop-*` は `:must-not [:own-domain-scoring-truth]`）。"
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [noren.prospect :as prospect]
             [noren.diagnose :as diagnose]
             [noren.prescribe :as prescribe]

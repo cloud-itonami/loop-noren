@@ -29,7 +29,7 @@
 
   あの規則は**文書**を縛り、測定とイベント列を明示的な例外にしている。
   過去の決定の列はまさにそれで、上書きすると後から引き直せなくなる。"
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def raw-dir "raw")
 (def corpus-dir "data/corpus")

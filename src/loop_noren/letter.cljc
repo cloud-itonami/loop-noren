@@ -8,7 +8,7 @@
   文面を LLM に書かせたくなったときも、差し替えてよいのはこの ns だけで、
   出力は governor を必ず通る。governor は claim の軸が evidence に無ければ
   止めるので、**LLM が新しい売り文句を足した瞬間に hold になる。**"
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [noren.plan :as plan]))
 
 (defn compose

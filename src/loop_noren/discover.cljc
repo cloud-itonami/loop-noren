@@ -17,7 +17,7 @@
 
   `loop-noren.loop` の上限は「読まれない queue を作らない」ため。こちらの上限は
   **相手のサーバと Overpass と LLM への負荷**のため。だから既定値も別に持つ。"
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [noren.discovery :as discovery]
             [noren.prospect :as prospect]))
 
