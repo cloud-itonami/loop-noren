@@ -16,7 +16,7 @@
 ;; （cloud-murakumo の organism と同じ形）。常駐は latency と費用を変えるだけで、
 ;; 権限は変えない —— 何を出してよいかは `noren.governor` が決める。
 (ns loop-noren.install
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             ["fs" :as fs] ["path" :as path] ["os" :as os] ["child_process" :as cp]))
 
 (def apply? (boolean (some #{"--apply"} *command-line-args*)))

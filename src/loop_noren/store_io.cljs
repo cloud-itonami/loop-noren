@@ -4,7 +4,7 @@
   ここが触るのはファイルシステムだけ。annex への copy は `git annex` の仕事で、
   この ns はやらない —— **書くことと預けることを同じ関数にしない**（預け先が
   落ちているときに書き込みまで止まる)。"
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [clojure.edn :as edn]
             ["fs" :as fs]
             ["path" :as path]

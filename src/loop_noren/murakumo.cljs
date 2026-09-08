@@ -22,7 +22,7 @@
   同じ判断で `child_process.execFileSync` + curl を使っているので、その idiom に
   揃えた。promise を loop の中に持ち込むと、どこで外に出るかが 1 画面に
   収まらなくなる。"
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (def ^:private cp (js/require "child_process"))
 

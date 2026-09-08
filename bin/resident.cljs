@@ -17,7 +17,7 @@
 ;; 残り、実体はローカルにしか無い状態になる。これは「後で預ける必要がある」で
 ;; あって「預けた」ではないので、区別できる形で出す。
 (ns loop-noren.resident
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             ["fs" :as fs]
             ["path" :as path]
             ["child_process" :as cp]))

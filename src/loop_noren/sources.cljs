@@ -18,7 +18,7 @@
 
   取れた本文がどちらの経路か（`:common-crawl` / `:live`）は evidence に残す
   —— 古い capture を今日の本文として扱ってしまう誤りは、出所が見えれば気付ける。"
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [commoncrawl.cdx :as cdx]
             [commoncrawl.extract :as extract]
             [commoncrawl.live-http :as cc-http]
