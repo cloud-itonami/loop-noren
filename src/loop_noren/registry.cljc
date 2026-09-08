@@ -8,7 +8,7 @@
 
   観測の出所（`:prospect/source`）も必須にしてある。後で「この 1 件は
   どこから来たのか」を answer できない登録は、断られたときに直せない。"
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [noren.prospect :as prospect]))
 
 (def known-sources

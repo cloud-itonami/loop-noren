@@ -8,7 +8,7 @@
   `kouhou.canonical`（ADR-2608110200）と同じ規律。**再利用せず小さく持つ**のは、
   actor 間で正本を共有すると片方の都合でもう片方のバイト列が変わるため
   （digest の互換は依存で守るものではない）。"
-  (:require [clojure.string :as str]))
+  (:require [kotoba.lang.text :as str]))
 
 (defn ^:private sorted-deep
   [x]
