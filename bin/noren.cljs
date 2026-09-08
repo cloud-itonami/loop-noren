@@ -17,7 +17,7 @@
 ;; prospect は人が宣言した小さな列なので実害が無い（自動発見を繋ぐときは
 ;; ここを段階取得に変える —— loop 側は変えなくてよい）。
 (ns loop-noren.cli
-  (:require [clojure.string :as str]
+  (:require [kotoba.lang.text :as str]
             [clojure.edn :as edn]
             [clojure.pprint :as pp]
             [promesa.core :as p]
