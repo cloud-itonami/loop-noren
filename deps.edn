@@ -15,7 +15,7 @@
   ;; どちらも nbb 側（`sources.cljs` / `commoncrawl.live-http`）からしか使わない
   ;; のに、`:deps` に置くと JVM の classpath 解決に入ってくる —— 実測 2026-08-11、
   ;; kotobase-commoncrawl-actor の推移依存に壊れた `:local/root`（langchain-clj）が
-  ;; あり、**`clojure -M:test` が classpath を組む段で落ちて 1 本も走らなかった**。
+  ;; あり、**`kbb -M:test` が classpath を組む段で落ちて 1 本も走らなかった**。
   ;; nbb の classpath は `--classpath` で明示するのでここに在っても無くても同じ。
   :nbb {:extra-deps {io.github.kotoba-lang/org-openstreetmap-overpass
                      {:local/root "../../kotoba-lang/org-openstreetmap-overpass"}

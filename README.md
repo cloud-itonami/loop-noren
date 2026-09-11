@@ -49,7 +49,7 @@ journal が持つのは sha256 だけで、実体は raw 面に居る。
 actor を clone するのに corpus のダウンロードが要る状態にしない。
 
 ```bash
-nbb --classpath "$CP" bin/noren.cljk verify-corpus   # identity（receipt どおりか）
+kbb --backend sci --classpath "$CP" bin/noren.cljk verify-corpus   # identity（receipt どおりか）
 git annex find --in kotobase raw/ | wc -l            # custody（object plane が持っているか）
 git annex copy raw/ --to kotobase --jobs 1
 datalad drop raw/                                    # 実体を落とす。pointer は残る
@@ -64,9 +64,9 @@ datalad drop raw/                                    # 実体を落とす。poin
 ## 常駐（deploy/）
 
 ```bash
-nbb deploy/install.cljk              # 何をするか
-nbb deploy/install.cljk --apply      # LaunchAgent を入れる（毎日 09:20）
-nbb deploy/install.cljk --remove --apply
+kbb --backend sci deploy/install.cljk              # 何をするか
+kbb --backend sci deploy/install.cljk --apply      # LaunchAgent を入れる（毎日 09:20）
+kbb --backend sci deploy/install.cljk --remove --apply
 ```
 
 installer は launchd の限定 PATH に Homebrew が含まれないことを考慮し、検出した
@@ -129,14 +129,14 @@ CP="src:test:../../kotoba-lang/noren/src:../../kotoba-lang/design-quality/src:\
 ../../kotoba-lang/jp-go-digital-design-system/src:../../kotoba-lang/html/src:../../kotoba-lang/css/src:\
 ../../kotoba-lang/org-openstreetmap-overpass/src:../../net-kotobase/commoncrawl-actor/src"
 
-nbb --classpath "$CP" run_tests.cljk                    # 18 tests / 59 assertions
-nbb --classpath "$CP" bin/noren.cljk discover           # 発見（dry-run。--accept で名簿に追記）
-nbb --classpath "$CP" bin/noren.cljk llm-probe          # murakumo-main の解決と疎通だけ
-nbb --classpath "$CP" bin/noren.cljk tick               # dry-run（何も送らない）
-nbb --classpath "$CP" bin/noren.cljk diagnose https://example.test/ --catalog
-nbb --classpath "$CP" bin/noren.cljk preview example-maru
-nbb --classpath "$CP" bin/noren.cljk build brief.edn --out site.html
-nbb --classpath "$CP" bin/noren.cljk tick --submit      # 承認キューへ積む
+kbb --backend sci --classpath "$CP" run_tests.cljk                    # 18 tests / 59 assertions
+kbb --backend sci --classpath "$CP" bin/noren.cljk discover           # 発見（dry-run。--accept で名簿に追記）
+kbb --backend sci --classpath "$CP" bin/noren.cljk llm-probe          # murakumo-main の解決と疎通だけ
+kbb --backend sci --classpath "$CP" bin/noren.cljk tick               # dry-run（何も送らない）
+kbb --backend sci --classpath "$CP" bin/noren.cljk diagnose https://example.test/ --catalog
+kbb --backend sci --classpath "$CP" bin/noren.cljk preview example-maru
+kbb --backend sci --classpath "$CP" bin/noren.cljk build brief.edn --out site.html
+kbb --backend sci --classpath "$CP" bin/noren.cljk tick --submit      # 承認キューへ積む
 ```
 
 `--submit` は `NOREN_INGRESS_KEY`（提案しかできない per-tenant の鍵）が要る。
