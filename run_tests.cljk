@@ -1,5 +1,5 @@
-#!/usr/bin/env nbb
-;; nbb run_tests.cljk — loop-noren のテスト
+#!/usr/bin/env kbb
+;; kbb --backend sci run_tests.cljk — loop-noren のテスト
 (require '[clojure.test :as t] 'loop-noren.loop-test 'loop-noren.discover-test 'loop-noren.store-test)
 ;; The exit code comes from the :end-run-tests report hook, NOT from the return
 ;; value of `run-tests`. Under nbb that value is nil, so the previous spelling

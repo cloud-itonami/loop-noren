@@ -1,8 +1,8 @@
-#!/usr/bin/env nbb
+#!/usr/bin/env kbb
 ;; 常駐の 1 日ぶん。LaunchAgent（deploy/）から呼ばれる。
 ;;
-;;   nbb bin/resident.cljk            # 何をするかだけ出す
-;;   nbb bin/resident.cljk --apply    # 実際に回して、書いて、預ける
+;;   kbb --backend sci bin/resident.cljk            # 何をするかだけ出す
+;;   kbb --backend sci bin/resident.cljk --apply    # 実際に回して、書いて、預ける
 ;;
 ;; ## なぜ 1 本のスクリプトか
 ;;
@@ -59,7 +59,7 @@
 
 (defn- noren [& args]
   (run (str "noren " (str/join " " args))
-       (concat ["nbb" "--classpath" classpath (path/join root "bin" "noren.cljs")] args)))
+       (concat ["kbb" "--backend" "sci" "--classpath" classpath (path/join root "bin" "noren.cljs")] args)))
 
 (defn- git [& args] (run (str "git " (str/join " " args)) (concat ["git"] args)))
 

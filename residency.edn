@@ -8,7 +8,7 @@
    :slot :attested
    :host :operator
    :cadence {:interval-seconds 86400}
-   :run ["nbb" "bin/resident.cljk" "--apply"]
+   :run ["kbb" "--backend" "sci" "bin/resident.cljk" "--apply"]
    :plist "deploy/cloud.itonami.noren.resident.plist.template"
    :credentials [:github-token :b2]
    :health {:kind :ledger :path "journal"}
