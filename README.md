@@ -23,8 +23,8 @@ raw/<日>/<sha>-*.txt  読んだ本文・生返答・診断した HTML → git-a
 src/loop_noren/       registry(検査) / loop(順序) / letter(組み立て)
                       discover(発見) / sources(OSM・CC) / murakumo(LLM)
                       store + store_io + canonical(永続化)
-bin/noren.cljs        外に出る唯一の場所。既定は dry-run
-bin/resident.cljs     常駐の 1 日ぶん（deploy/ の LaunchAgent が呼ぶ）
+bin/noren.cljk        外に出る唯一の場所。既定は dry-run
+bin/resident.cljk     常駐の 1 日ぶん（deploy/ の LaunchAgent が呼ぶ）
 ```
 
 ## 永続化 —— canonical EDN は git、bytes は annex
@@ -49,7 +49,7 @@ journal が持つのは sha256 だけで、実体は raw 面に居る。
 actor を clone するのに corpus のダウンロードが要る状態にしない。
 
 ```bash
-nbb --classpath "$CP" bin/noren.cljs verify-corpus   # identity（receipt どおりか）
+nbb --classpath "$CP" bin/noren.cljk verify-corpus   # identity（receipt どおりか）
 git annex find --in kotobase raw/ | wc -l            # custody（object plane が持っているか）
 git annex copy raw/ --to kotobase --jobs 1
 datalad drop raw/                                    # 実体を落とす。pointer は残る
@@ -64,16 +64,16 @@ datalad drop raw/                                    # 実体を落とす。poin
 ## 常駐（deploy/）
 
 ```bash
-nbb deploy/install.cljs              # 何をするか
-nbb deploy/install.cljs --apply      # LaunchAgent を入れる（毎日 09:20）
-nbb deploy/install.cljs --remove --apply
+nbb deploy/install.cljk              # 何をするか
+nbb deploy/install.cljk --apply      # LaunchAgent を入れる（毎日 09:20）
+nbb deploy/install.cljk --remove --apply
 ```
 
 installer は launchd の限定 PATH に Homebrew が含まれないことを考慮し、検出した
 `nbb` の directory を `EnvironmentVariables/PATH` に固定する。これが無いと
 `nbb` の `/usr/bin/env node` が解決できず、常駐は exit 127 になる。
 
-1 日 1 回 `bin/resident.cljs` が discover --accept → tick → commit → annex copy →
+1 日 1 回 `bin/resident.cljk` が discover --accept → tick → commit → annex copy →
 verify → push を**この順で**回す。順序が要るものを plist に割らないのは、
 時刻の偶然で「まだ commit していない raw を copy する」が起きるため。
 
@@ -129,14 +129,14 @@ CP="src:test:../../kotoba-lang/noren/src:../../kotoba-lang/design-quality/src:\
 ../../kotoba-lang/jp-go-digital-design-system/src:../../kotoba-lang/html/src:../../kotoba-lang/css/src:\
 ../../kotoba-lang/org-openstreetmap-overpass/src:../../net-kotobase/commoncrawl-actor/src"
 
-nbb --classpath "$CP" run_tests.cljs                    # 18 tests / 59 assertions
-nbb --classpath "$CP" bin/noren.cljs discover           # 発見（dry-run。--accept で名簿に追記）
-nbb --classpath "$CP" bin/noren.cljs llm-probe          # murakumo-main の解決と疎通だけ
-nbb --classpath "$CP" bin/noren.cljs tick               # dry-run（何も送らない）
-nbb --classpath "$CP" bin/noren.cljs diagnose https://example.test/ --catalog
-nbb --classpath "$CP" bin/noren.cljs preview example-maru
-nbb --classpath "$CP" bin/noren.cljs build brief.edn --out site.html
-nbb --classpath "$CP" bin/noren.cljs tick --submit      # 承認キューへ積む
+nbb --classpath "$CP" run_tests.cljk                    # 18 tests / 59 assertions
+nbb --classpath "$CP" bin/noren.cljk discover           # 発見（dry-run。--accept で名簿に追記）
+nbb --classpath "$CP" bin/noren.cljk llm-probe          # murakumo-main の解決と疎通だけ
+nbb --classpath "$CP" bin/noren.cljk tick               # dry-run（何も送らない）
+nbb --classpath "$CP" bin/noren.cljk diagnose https://example.test/ --catalog
+nbb --classpath "$CP" bin/noren.cljk preview example-maru
+nbb --classpath "$CP" bin/noren.cljk build brief.edn --out site.html
+nbb --classpath "$CP" bin/noren.cljk tick --submit      # 承認キューへ積む
 ```
 
 `--submit` は `NOREN_INGRESS_KEY`（提案しかできない per-tenant の鍵）が要る。

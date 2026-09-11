@@ -1,9 +1,9 @@
 #!/usr/bin/env nbb
 ;; 常駐の LaunchAgent を入れる。
 ;;
-;;   nbb deploy/install.cljs            # 何をするか
-;;   nbb deploy/install.cljs --apply    # plist を書いて bootstrap する
-;;   nbb deploy/install.cljs --remove   # 外す
+;;   nbb deploy/install.cljk            # 何をするか
+;;   nbb deploy/install.cljk --apply    # plist を書いて bootstrap する
+;;   nbb deploy/install.cljk --remove   # 外す
 ;;
 ;; nbb であって sh ではない（CLAUDE.md は新規 .sh を禁じ、ADR-2607173000 が
 ;; bb を script host から退役させている）。
@@ -82,4 +82,4 @@
          (catch :default _ nil))
     (.execFileSync cp "launchctl" #js ["bootstrap" (str "gui/" uid) plist-path])
     (println (str "bootstrap 済み: gui/" uid "/" label))
-    (println "止めるとき: nbb deploy/install.cljs --remove --apply")))
+    (println "止めるとき: nbb deploy/install.cljk --remove --apply")))
