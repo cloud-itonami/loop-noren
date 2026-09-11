@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- deploy/install.cljs が @REPO@ / @NBB@ / @HOME@ を置換して入れる。
+<!-- deploy/install.cljk が @REPO@ / @NBB@ / @HOME@ を置換して入れる。
      このファイルを直接 install しない（loop-yakuwari / cloud-murakumo の
      organism と同じ install-time template の慣習）。 -->
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
@@ -10,7 +10,7 @@
   <key>ProgramArguments</key>
   <array>
     <string>@NBB@</string>
-    <string>@REPO@/bin/resident.cljs</string>
+    <string>@REPO@/bin/resident.cljk</string>
     <string>--apply</string>
   </array>
   <!-- LaunchAgent の cwd は "/" なので、repo を明示する。 -->

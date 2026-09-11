@@ -1,11 +1,11 @@
 #!/usr/bin/env nbb
 ;; loop-noren CLI —— この repo で**外に出る唯一の場所**。
 ;;
-;;   nbb bin/noren.cljs tick                 # 1 周（既定は dry-run。送らない）
-;;   nbb bin/noren.cljs tick --submit        # 承認キューへ effect を積む
-;;   nbb bin/noren.cljs diagnose <url> [--catalog]
-;;   nbb bin/noren.cljs preview <prospect-id>
-;;   nbb bin/noren.cljs build <brief.edn> [--out site.html]
+;;   nbb bin/noren.cljk tick                 # 1 周（既定は dry-run。送らない）
+;;   nbb bin/noren.cljk tick --submit        # 承認キューへ effect を積む
+;;   nbb bin/noren.cljk diagnose <url> [--catalog]
+;;   nbb bin/noren.cljk preview <prospect-id>
+;;   nbb bin/noren.cljk build <brief.edn> [--out site.html]
 ;;
 ;; classpath は README の 1 行、または scripts/run.cljs。
 ;;

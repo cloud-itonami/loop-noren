@@ -1,8 +1,8 @@
 #!/usr/bin/env nbb
 ;; 常駐の 1 日ぶん。LaunchAgent（deploy/）から呼ばれる。
 ;;
-;;   nbb bin/resident.cljs            # 何をするかだけ出す
-;;   nbb bin/resident.cljs --apply    # 実際に回して、書いて、預ける
+;;   nbb bin/resident.cljk            # 何をするかだけ出す
+;;   nbb bin/resident.cljk --apply    # 実際に回して、書いて、預ける
 ;;
 ;; ## なぜ 1 本のスクリプトか
 ;;
