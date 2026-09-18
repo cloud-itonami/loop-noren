@@ -59,7 +59,7 @@
 
 (defn- noren [& args]
   (run (str "noren " (str/join " " args))
-       (concat ["kbb" "--backend" "sci" "--classpath" classpath (path/join root "bin" "noren.cljs")] args)))
+       (concat ["kbb" "--backend" "sci" "--classpath" classpath (path/join root "bin" "noren.cljk")] args)))
 
 (defn- git [& args] (run (str "git " (str/join " " args)) (concat ["git"] args)))
 
