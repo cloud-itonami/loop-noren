@@ -19,7 +19,7 @@
 (ns loop-noren.cli
   (:require [kotoba.lang.text :as str]
             [clojure.edn :as edn]
-            [clojure.pprint :as pp]
+            [kotoba.pprint :as pp]
             [promesa.core :as p]
             ["fs" :as fs]
             ["path" :as path]
