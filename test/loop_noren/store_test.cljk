@@ -1,5 +1,5 @@
 (ns loop-noren.store-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [kotoba.lang.text :as str]
             [loop-noren.canonical :as canonical]
             [loop-noren.store :as store]))
