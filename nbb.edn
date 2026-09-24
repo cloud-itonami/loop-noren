@@ -5,6 +5,10 @@
 ;; :paths and every sha below are COPIED from deps.edn, not chosen here.
 {:paths ["src" "."]
  :deps {
+        ;; kotoba.pprint replaced clojure.pprint here (2026-09-24): the same
+        ;; bytes (cljs.pprint transcribed). An explicit floor; tools.deps takes the
+        ;; NEWEST sha it is shown.
+        io.github.kotoba-lang/pprint {:git/sha "5c9d4aea71d6caac529fffcf361aba0f87ee485e"}
         ;; Declared HERE and not only in deps.edn: nbb reads nbb.edn and does NOT
         ;; read deps.edn or bb.edn, and the .cljs in this repo are run as
         ;; bare `nbb <file>`. A coordinate they cannot see is not a
