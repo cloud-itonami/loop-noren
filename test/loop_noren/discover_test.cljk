@@ -1,5 +1,5 @@
 (ns loop-noren.discover-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [loop-noren.discover :as discover]
             [noren.discovery :as d]))
 

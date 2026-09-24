@@ -1,5 +1,5 @@
 (ns loop-noren.loop-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [kotoba.lang.text :as str]
             [loop-noren.loop :as l]
             [loop-noren.letter :as letter]
