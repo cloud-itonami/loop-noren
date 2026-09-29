@@ -153,7 +153,7 @@
 ;;
 ;; `git add` は data / journal / raw / .gitattributes だけに限る。共有 checkout
 ;; なので、別セッションが src/ を編集している最中に常駐が回ることがある ——
-;; `git add -A` にすると他人の WIP を勝手に commit する（CLAUDE.md「並行エージェント
+;; `git add -A` にすると他人の WIP を勝手に commit する（AGENTS.md「並行エージェント
 ;; 運用」が禁じている形）。常駐が触ってよいのは自分が書いた面だけ。
 (when (dirty?)
   (git "add" "data" "journal" "raw" ".gitattributes")
