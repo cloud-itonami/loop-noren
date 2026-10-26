@@ -3,21 +3,34 @@
  :deps {
         ;; kotoba.test (clojure.test-compatible surface), not clojure.test --
         ;; scripts/migrate-clojure-test-to-kotoba-test.cljk. Explicit floor.
-        io.github.kotoba-lang/test {:git/url "https://github.com/kotoba-lang/test.git"
-                                    :git/sha "2ab4885f99fd25552d380d0f6b0b54c5a72eb7ae"}
+        io.github.kotoba-lang/test
+        {:git/url "https://github.com/kotoba-lang/kotoba.git"
+         :git/sha "7e1dbe0aece831138e6106c59d2b26375d0f60c4"
+         :deps/root "lib/kotoba.test"}
         ;; kotoba.pprint replaced clojure.pprint here (2026-09-24): the same
         ;; bytes (cljs.pprint transcribed). An explicit floor; tools.deps takes the
         ;; NEWEST sha it is shown.
-        io.github.kotoba-lang/pprint {:git/sha "5c9d4aea71d6caac529fffcf361aba0f87ee485e"}
+        io.github.kotoba-lang/pprint
+        {:git/url "https://github.com/kotoba-lang/kotoba.git"
+         :git/sha "7e1dbe0aece831138e6106c59d2b26375d0f60c4"
+         :deps/root "lib/kotoba.pprint"}
         ;; kotoba.lang.text, not clojure.string. Pinned as an explicit floor:
         ;; tools.deps takes the NEWEST sha it is shown, so without a floor here
         ;; this repo silently rides whatever a sibling happens to name.
-        io.github.kotoba-lang/text {:git/sha "73bdb13ae7a3d004b44bca08be03a3191157a38f"}
-       io.github.kotoba-lang/noren {:local/root "../../kotoba-lang/noren"}
-        io.github.kotoba-lang/design-quality {:local/root "../../kotoba-lang/design-quality"}
-        io.github.kotoba-lang/jp-go-digital-design-system {:local/root "../../kotoba-lang/jp-go-digital-design-system"}
-        io.github.kotoba-lang/html {:local/root "../../kotoba-lang/html"}
-        io.github.kotoba-lang/css {:local/root "../../kotoba-lang/css"}}
+        io.github.kotoba-lang/text
+        {:git/url "https://github.com/kotoba-lang/kotoba.git"
+         :git/sha "7e1dbe0aece831138e6106c59d2b26375d0f60c4"
+         :deps/root "lib/kotoba.text"}
+       io.github.kotoba-lang/noren
+        {:local/root "../../kotoba-lang/kotoba/lib/kotoba.noren"}
+        io.github.kotoba-lang/design-quality
+        {:local/root "../../kotoba-lang/kotoba/lib/kotoba.designQuality"}
+        io.github.kotoba-lang/jp-go-digital-design-system
+        {:local/root "../../kotoba-lang/kotoba/lib/kotoba.jpGoDigitalDesignSystem"}
+        io.github.kotoba-lang/html
+        {:local/root "../../kotoba-lang/kotoba/lib/kotoba.html"}
+        io.github.kotoba-lang/css
+        {:local/root "../../kotoba-lang/kotoba/lib/kotoba.css"}}
  :aliases
  {;; 発見（discover）が乗っている 2 つ。**`:deps` ではなくここに置く。**
   ;; どちらも nbb 側（`sources.cljs` / `commoncrawl.live-http`）からしか使わない
@@ -26,9 +39,9 @@
   ;; あり、**`kbb -M:test` が classpath を組む段で落ちて 1 本も走らなかった**。
   ;; nbb の classpath は `--classpath` で明示するのでここに在っても無くても同じ。
   :nbb {:extra-deps {io.github.kotoba-lang/org-openstreetmap-overpass
-                     {:local/root "../../kotoba-lang/org-openstreetmap-overpass"}
+        {:local/root "../../kotoba-lang/kotoba/lib/org.openstreetmap.overpass"}
                      io.github.kotoba-lang/commoncrawl-actor
-                     {:local/root "../../kotoba-lang/commoncrawl-actor"}}}
+        {:local/root "../../kotoba-lang/kotoba/lib/kotoba.commoncrawlActor"}}}
   :test {:extra-paths ["test"]
          :extra-deps {io.github.cognitect-labs/test-runner
                       {:git/tag "v0.5.1" :git/sha "dfb30dd6605cb6c0efc275e1df1736f6e90d4d73"}}
